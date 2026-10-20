@@ -1,0 +1,27 @@
+{
+ "prompt": "Starsector ship sprite on black background. Ancient egyptian winged sun-disc carrier destroyer, sacred falcon of Ra. Dark anthracite armor with bold polished gold feather-edge trim and gold hieroglyph panel engravings, a golden crest of a hooded cobra on the prow, large glowing golden sun disc with an eye of Horus on the centre deck, two hangar bays with bright glowing amber interiors, lapis lazuli blue lights along the wing feathers, broad wings ending in long sharp feather tips, glowing orange engine exhausts. Soft top lighting, bevelled plates, deep shadows, strong contrast.",
+ "size": [
+  576,
+  1088
+ ],
+ "steps": 16,
+ "lora_strength": null,
+ "images": [
+  {
+   "seed": 4300,
+   "path": "ra_r2_seed4300.png"
+  },
+  {
+   "seed": 4301,
+   "path": "ra_r2_seed4301.png"
+  },
+  {
+   "seed": 4302,
+   "path": "ra_r2_seed4302.png"
+  },
+  {
+   "seed": 4303,
+   "path": "ra_r2_seed4303.png"
+  }
+ ]
+}

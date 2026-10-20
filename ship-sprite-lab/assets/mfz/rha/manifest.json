@@ -1,0 +1,227 @@
+{
+ "ship": "Rha (mfz_rha)",
+ "status": "CANDIDATE - contributor-selected, not reviewed by maintainers, not game-tested",
+ "note": "Source labels are neutral (see docs/collaboration/issue-3-intake-and-plan.md for the mapping). destination_sha256 equals source_sha256 unless transformation says otherwise.",
+ "files": [
+  {
+   "source": "source:mod/graphics/ships/mfz_rha.png",
+   "source_sha256": "bf82e6e87be8ef5b13c554d6f063657bfb8f1225bf6ff5a0ce25640fd36c6293",
+   "destination": "ship-sprite-lab/assets/mfz/rha/sprite/mfz_rha.png",
+   "destination_sha256": "bf82e6e87be8ef5b13c554d6f063657bfb8f1225bf6ff5a0ce25640fd36c6293",
+   "bytes": 39142,
+   "kind": "sprite",
+   "role": "candidate sprite as installed in the contributor's mod (136x246 RGBA)",
+   "transformation": "none (byte-identical copy)"
+  },
+  {
+   "source": "source:mod/data/hulls/mfz_rha.ship",
+   "source_sha256": "268594ce8085f0744d7ea182ce851ea3fcb6e1269bcc416822ff03bd716f0cfa",
+   "destination": "ship-sprite-lab/assets/mfz/rha/game-data/mfz_rha.ship",
+   "destination_sha256": "268594ce8085f0744d7ea182ce851ea3fcb6e1269bcc416822ff03bd716f0cfa",
+   "bytes": 2784,
+   "kind": "hull",
+   "role": "Starsector hull definition (guessed slot angles/arcs; untested in game)",
+   "transformation": "none (byte-identical copy)"
+  },
+  {
+   "source": "source:mod/data/variants/mfz_rha_standard.variant",
+   "source_sha256": "ece000f2ab261905c9c516e59f4723759cfc5838b4350b0d0abc8047c62f8c77",
+   "destination": "ship-sprite-lab/assets/mfz/rha/game-data/mfz_rha_standard.variant",
+   "destination_sha256": "ece000f2ab261905c9c516e59f4723759cfc5838b4350b0d0abc8047c62f8c77",
+   "bytes": 265,
+   "kind": "variant",
+   "role": "empty-loadout variant",
+   "transformation": "none (byte-identical copy)"
+  },
+  {
+   "source": "source:mod/data/config/engine_styles.json",
+   "source_sha256": "eb208c711a7f4f7d95849d064dc0d04dd03accda4f8ddfa86efe73fb8c0d4c58",
+   "destination": "ship-sprite-lab/assets/mfz/rha/game-data/engine_styles.json",
+   "destination_sha256": "eb208c711a7f4f7d95849d064dc0d04dd03accda4f8ddfa86efe73fb8c0d4c58",
+   "bytes": 435,
+   "kind": "config",
+   "role": "MFZ_GOLD engine style used by the hull",
+   "transformation": "none (byte-identical copy)"
+  },
+  {
+   "source": "source:mod/data/config/hull_styles.json",
+   "source_sha256": "76928b58935e4f2c74b030b65b2b18288ce215eed012625469a8f9c8a6cb8254",
+   "destination": "ship-sprite-lab/assets/mfz/rha/game-data/hull_styles.json",
+   "destination_sha256": "76928b58935e4f2c74b030b65b2b18288ce215eed012625469a8f9c8a6cb8254",
+   "bytes": 2259,
+   "kind": "config",
+   "role": "MFZ_RHA hull style (MIDLINE copy with gold colours)",
+   "transformation": "none (byte-identical copy)"
+  },
+  {
+   "source": "source:mod/data/hulls/ship_data.csv",
+   "source_sha256": "0eb8879ceae179388744dd31c986c90ff1aefec9150d2c5ce4cc5ba57027ccd1",
+   "destination": "ship-sprite-lab/assets/mfz/rha/game-data/ship_data_rha_row.csv",
+   "destination_sha256": "6ecb6abb70ef20ded6fb77d5d67a75335a6bcb5772cde64debfdddc78a3bbfe3",
+   "bytes": 780,
+   "kind": "csv-row",
+   "role": "header + the mfz_rha row only",
+   "transformation": "extracted header and mfz_rha row (csv re-serialised)"
+  },
+  {
+   "source": "source:mod/data/strings/descriptions.csv",
+   "source_sha256": "d1b300b69bcbd0acceab039ad46c17c860ec37b5005a9e1d871ac00309ba6af2",
+   "destination": "ship-sprite-lab/assets/mfz/rha/game-data/descriptions_rha_row.csv",
+   "destination_sha256": "adbbca46b638f8af4bbd40b5831df39b8be5f3eb1b555e842992ca1d42786d07",
+   "bytes": 548,
+   "kind": "csv-row",
+   "role": "header + the mfz_rha description row only",
+   "transformation": "extracted header and mfz_rha row (csv re-serialised)"
+  },
+  {
+   "source": "source:staging/raB_armed_slots.json",
+   "source_sha256": "611b2fbc6c9140baa36d32862dd92ec31df62c869faf25f75a4d0204d99be5b4",
+   "destination": "ship-sprite-lab/assets/mfz/rha/generation/stamped_sockets.json",
+   "destination_sha256": "611b2fbc6c9140baa36d32862dd92ec31df62c869faf25f75a4d0204d99be5b4",
+   "bytes": 309,
+   "kind": "metadata",
+   "role": "socket stamp positions written by finish_b.py (sprite px, y down = stern)",
+   "transformation": "none (byte-identical copy)"
+  },
+  {
+   "source": "source:staging/gen_20261020_165553/ra_a_manifest.json",
+   "source_sha256": "77e1b720a32c66eee5a74b9e8cd5b1b2c5105e1d8fe5a0442e21a5eb344198ba",
+   "destination": "ship-sprite-lab/assets/mfz/rha/generation/ra_a_manifest.json",
+   "destination_sha256": "8792961d6217aaa755136d209144e56e58ac745af3f4bc4d0cf2265950723c60",
+   "bytes": 954,
+   "kind": "metadata",
+   "role": "round 1 text-only batch: prompt, size, seeds",
+   "transformation": "image paths reduced to file names"
+  },
+  {
+   "source": "source:staging/gen_20261020_165821/ra_r1_manifest.json",
+   "source_sha256": "60a8f730819331f85c8083ac5f539c62539d41b1250d3c725146d7fb273f455d",
+   "destination": "ship-sprite-lab/assets/mfz/rha/generation/ra_r1_manifest.json",
+   "destination_sha256": "8afe34d7d863df14716aceed86b2eac9e6c49d09c546e0f1a291604abcf24c88",
+   "bytes": 777,
+   "kind": "metadata",
+   "role": "unselected round (images not imported): prompt, size, seeds",
+   "transformation": "image paths reduced to file names"
+  },
+  {
+   "source": "source:staging/gen_20261020_165905/ra_r2_manifest.json",
+   "source_sha256": "f6ccd426b10ea98d97190881080f4f621b3f0f8d480bc1a6945b89e84e066ab9",
+   "destination": "ship-sprite-lab/assets/mfz/rha/generation/ra_r2_manifest.json",
+   "destination_sha256": "d5dd681a99c69f8e0b867056a4cbeeffc0489c749ee15e107f2b90f6281845aa",
+   "bytes": 917,
+   "kind": "metadata",
+   "role": "round 2 img2img batch: prompt, size, steps, seeds",
+   "transformation": "image paths reduced to file names"
+  },
+  {
+   "source": "source:staging/gen_20261020_165553/ra_a_seed1588384320.png",
+   "source_sha256": "8ad156f7e3b6e76b81ff4af47bda4adb752d672d17d5b123660295623ac0d0a5",
+   "destination": "ship-sprite-lab/assets/mfz/rha/generation/ra_a_seed1588384320.png",
+   "destination_sha256": "8ad156f7e3b6e76b81ff4af47bda4adb752d672d17d5b123660295623ac0d0a5",
+   "bytes": 458415,
+   "kind": "raw-generation",
+   "role": "round 1 pick (raw 576x1088)",
+   "transformation": "none (byte-identical copy)"
+  },
+  {
+   "source": "source:staging/ra_320_mirror.png",
+   "source_sha256": "ba74b41e033d3be9b0ca01047c53bdec05caf352b02dcb420599dd0ee16a5223",
+   "destination": "ship-sprite-lab/assets/mfz/rha/generation/ra_320_mirror.png",
+   "destination_sha256": "ba74b41e033d3be9b0ca01047c53bdec05caf352b02dcb420599dd0ee16a5223",
+   "bytes": 453870,
+   "kind": "intermediate",
+   "role": "round 2 init image: seed 320 mirrored about bbox axis (mirror.py)",
+   "transformation": "none (byte-identical copy)"
+  },
+  {
+   "source": "source:staging/gen_20261020_165905/ra_r2_seed4302.png",
+   "source_sha256": "96517db92479408b574af54de74a99c31c90a29d35abc08e522f24f5394e53fb",
+   "destination": "ship-sprite-lab/assets/mfz/rha/generation/ra_r2_seed4302.png",
+   "destination_sha256": "96517db92479408b574af54de74a99c31c90a29d35abc08e522f24f5394e53fb",
+   "bytes": 461504,
+   "kind": "raw-generation",
+   "role": "round 2 pick B (raw 576x1088, img2img denoise 0.52)",
+   "transformation": "none (byte-identical copy)"
+  },
+  {
+   "source": "source:staging/raR_4302.png",
+   "source_sha256": "3b600a500f5b6794510628951c05df82ac624c444e588fcd1deb39fdd05ab693",
+   "destination": "ship-sprite-lab/assets/mfz/rha/generation/raR_4302.png",
+   "destination_sha256": "3b600a500f5b6794510628951c05df82ac624c444e588fcd1deb39fdd05ab693",
+   "bytes": 39345,
+   "kind": "intermediate",
+   "role": "seed 4302 processed --width 136 --symmetrize left; input of finish_b.py",
+   "transformation": "none (byte-identical copy)"
+  },
+  {
+   "source": "source:sprite-gen-skill/workflows/sprite_api.json",
+   "source_sha256": "1c5cc229c6ccca31f02b8bb623cf4d3174f041c246612aea00a25f2c98707580",
+   "destination": "ship-sprite-lab/assets/mfz/rha/workflows/sprite_api.json",
+   "destination_sha256": "1c5cc229c6ccca31f02b8bb623cf4d3174f041c246612aea00a25f2c98707580",
+   "bytes": 1868,
+   "kind": "workflow",
+   "role": "ComfyUI API workflow, text-to-image (Flux.2 Klein 9B GGUF + starsector-x4-klein LoRA)",
+   "transformation": "none (byte-identical copy)"
+  },
+  {
+   "source": "source:sprite-gen-skill/workflows/sprite_img2img_api.json",
+   "source_sha256": "a9d698c3adcc54e859547ff4ab63d53668e7505e926e1289ae8cf7831d25d3a5",
+   "destination": "ship-sprite-lab/assets/mfz/rha/workflows/sprite_img2img_api.json",
+   "destination_sha256": "a9d698c3adcc54e859547ff4ab63d53668e7505e926e1289ae8cf7831d25d3a5",
+   "bytes": 2083,
+   "kind": "workflow",
+   "role": "ComfyUI API workflow, image-to-image with SplitSigmasDenoise",
+   "transformation": "none (byte-identical copy)"
+  },
+  {
+   "source": "source:session-scripts/mirror.py",
+   "source_sha256": "26a7788978ebf0bdb540f91a60d11a75f0ad5053f080ea02b208e560e9d12a42",
+   "destination": "ship-sprite-lab/assets/mfz/rha/scripts/mirror.py",
+   "destination_sha256": "26a7788978ebf0bdb540f91a60d11a75f0ad5053f080ea02b208e560e9d12a42",
+   "bytes": 611,
+   "kind": "script",
+   "role": "round 2 mirror helper",
+   "transformation": "personal absolute paths replaced by <STAGING_DIR>/<MOD_DIR>/<STARSECTOR_HOME>"
+  },
+  {
+   "source": "source:session-scripts/finish_b.py",
+   "source_sha256": "da4a463bfc602f20ab78fe6204513b302f58a2df9ee4b218e707bc8812cdd122",
+   "destination": "ship-sprite-lab/assets/mfz/rha/scripts/finish_b.py",
+   "destination_sha256": "dd0f759aa5ad8ab0af14b0a27d3c73ee3c3941d8b681cac8a7273e5a6eef921e",
+   "bytes": 1812,
+   "kind": "script",
+   "role": "hangar dimming + 4 vanilla-socket stamps -> mfz_rha.png",
+   "transformation": "personal absolute paths replaced by <STAGING_DIR>/<MOD_DIR>/<STARSECTOR_HOME>"
+  },
+  {
+   "source": "source:session-scripts/make_ship.py",
+   "source_sha256": "79535c3ec3455a1001986cc603fb2a12d28181eb4f573db341f59072a3bef16d",
+   "destination": "ship-sprite-lab/assets/mfz/rha/scripts/make_ship.py",
+   "destination_sha256": "5807cc48584db9be36f50f55998add8691971f757ca883eaf7637a1516f3c921",
+   "bytes": 2510,
+   "kind": "script",
+   "role": "derives mfz_rha.ship bounds/slots/engines from the sprite alpha",
+   "transformation": "personal absolute paths replaced by <STAGING_DIR>/<MOD_DIR>/<STARSECTOR_HOME>"
+  },
+  {
+   "source": "source:staging/rha_ship_overlay.png",
+   "source_sha256": "7c116aaaa2822ae32bd11b1ca77a019b42912daa773eb560772fc1bcfa5dcb6f",
+   "destination": "ship-sprite-lab/assets/mfz/rha/previews/rha_ship_overlay.png",
+   "destination_sha256": "7c116aaaa2822ae32bd11b1ca77a019b42912daa773eb560772fc1bcfa5dcb6f",
+   "bytes": 68112,
+   "kind": "derived-preview",
+   "role": "sprite with .ship bounds, slots and engine flames drawn over it (upscaled)",
+   "transformation": "none (byte-identical copy)"
+  },
+  {
+   "source": "source:staging/raB_before_after.png",
+   "source_sha256": "4f20f27156e7dc95e600512f9a50418b218d5c1747fc33d1d0707a1315b79319",
+   "destination": "ship-sprite-lab/assets/mfz/rha/previews/raB_before_after.png",
+   "destination_sha256": "4f20f27156e7dc95e600512f9a50418b218d5c1747fc33d1d0707a1315b79319",
+   "bytes": 59057,
+   "kind": "derived-preview",
+   "role": "before/after hangar dimming + socket stamping",
+   "transformation": "none (byte-identical copy)"
+  }
+ ]
+}

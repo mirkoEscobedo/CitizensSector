@@ -1,0 +1,27 @@
+{
+ "prompt": "Starsector ship sprite on black background. Ancient egyptian winged sun-disc carrier destroyer. Dark anthracite armor with bright polished gold feather-edge trim, a hooded cobra uraeus carved into the prow, an eye of Horus engraved on the golden sun disc, glowing amber light inside two hangar bays, small lapis lazuli blue accent lights along the wing feathers, glowing orange engine exhausts. Soft top lighting, bevelled plates, deep shadows.",
+ "size": [
+  576,
+  1088
+ ],
+ "steps": 16,
+ "lora_strength": null,
+ "images": [
+  {
+   "seed": 4200,
+   "path": "ra_r1_seed4200.png"
+  },
+  {
+   "seed": 4201,
+   "path": "ra_r1_seed4201.png"
+  },
+  {
+   "seed": 4202,
+   "path": "ra_r1_seed4202.png"
+  },
+  {
+   "seed": 4203,
+   "path": "ra_r1_seed4203.png"
+  }
+ ]
+}
