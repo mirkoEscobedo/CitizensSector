@@ -39,6 +39,8 @@ Run commands from the repository root:
 
 Use the guarded `workspace-template` npm script; it fails with setup instructions if the local executable is missing. `.npmrc` keeps npm offline and disables install scripts. Do not use `npx` or download a same-version substitute. Installation/adoption are separate: setup consumes the already committed managed blocks and `.agentic/project.json`; it does not re-adopt on every clone.
 
+In this retained alpha, optional `update status` returns `INCOMPLETE` because it reports the approved `file:` dependency as `manifest.exact=false`. Its installed binary, lock version/integrity presence and project provenance fields match. Use setup's actual hash checks and `doctor` for identity evidence; do not switch to a registry dependency to silence this status.
+
 Onboarding needs no private game art, model, generated provider response, Blender or API key and makes no image-provider calls or game launches. Supplied reference PNGs are already tracked in `ship-sprite-lab/docs/references`; their presence does not grant redistribution rights. Full `run --methods available` needs the authorized cached provider PNG at `ship-sprite-lab/outputs/idris/raw/M4-attempt-01.png` (not in Git). Obtain that exact original and provenance from the human owner; do not substitute an image or invoke a provider during setup. `compare`/`validate` require candidate outputs; export validation also needs `outputs/idris/export/idris_lab/data/hulls/idris_lab.ship`. Missing outputs are actionable prerequisites, not a software-check failure.
 
 For native-reference discovery, set `$env:STARSECTOR_HOME = 'C:\your game path\Starsector'` in your own session. Export currently reads `game_install` in `ship-sprite-lab/experiment.json` separately; review that local setting before an explicit export. Never commit another contributor's absolute game path. Native assets stay in ignored `reference-private/`; generated outputs stay in ignored `outputs/`. Read the lab README and [manual game smoke test](ship-sprite-lab/docs/SMOKE_TEST.md) before any explicit game run. M2/M3 additionally need an authorized genuine mesh/Blender; onboarding does not acquire them.
@@ -51,14 +53,18 @@ Start a **new session at the repository root** with `codex` or `claude`. Shared 
 - Claude Code: inspect `/context` to confirm `CLAUDE.md` and imported `AGENTS.md` are loaded; ask the same question. [Official import guidance](https://code.claude.com/docs/en/memory#share-one-file-with-other-coding-tools).
 - Actual loading checks and clean-clone evidence are recorded in [docs/ONBOARDING-VERIFICATION.md](docs/ONBOARDING-VERIFICATION.md). A file/import check alone is not an actual Claude session test. The friend's physical-machine first use remains a handoff check.
 
-For the first implementation task, choose a scoped issue and replace `42`/`short-slug` below with its real number/name. Have the maintainer assign exactly one human owner (self-assign requires repository permission). Record assistant, branch/current commit, dependencies and acceptance criteria using the issue template before implementation. Small reversible edits remain Direct; multi-session work is issue-scoped.
+After this onboarding PR merges, choose a scoped issue for the first implementation task. Have the maintainer assign exactly one human owner (self-assign requires repository permission). Record assistant, branch/current commit, dependencies and acceptance criteria using the issue template before implementation. Small reversible edits remain Direct; multi-session work is issue-scoped.
 
 ```powershell
 git switch master
 git pull --ff-only origin master
-gh issue view 42
-gh issue edit 42 --add-assignee '@me'
-git switch -c task/42-short-slug
+gh issue list --state open
+$issue = Read-Host 'Assigned implementation issue number'
+$slug = Read-Host 'Short branch slug (lowercase words with hyphens)'
+gh issue view $issue
+gh issue edit $issue --add-assignee '@me'
+$branch = "task/$issue-$slug"
+git switch -c $branch
 git rev-parse HEAD
 codex
 # Or run: claude
@@ -66,10 +72,10 @@ codex
 npm.cmd run check
 git diff --check
 git status --short
-git add <explicit-paths-for-this-task>
+git add --interactive
 git commit -m "Describe the completed task"
-git push -u origin task/42-short-slug
+git push -u origin $branch
 gh pr create --base master --fill
 ```
 
-Fill the PR template and include `Closes #42` only when its scope is complete. Request the other contributor's review. Before editing a shared sprite, explicitly agree on one active editor; comments are not an atomic lock. Hand off with completed work, exact commit, changed assets/interfaces, checks/visual evidence, remaining work, blockers and next human owner. Keep credentials out of instructions and commits.
+Fill the PR template and include `Closes #<issue-number>` only when its scope is complete. Request the other contributor's review. Before editing a shared sprite, explicitly agree on one active editor; comments are not an atomic lock. Hand off with completed work, exact commit, changed assets/interfaces, checks/visual evidence, remaining work, blockers and next human owner. Keep credentials out of instructions and commits.
