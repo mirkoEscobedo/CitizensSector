@@ -5,10 +5,10 @@ $root = Split-Path $PSScriptRoot -Parent
 Push-Location $root
 try {
     if ([Environment]::OSVersion.Platform -ne 'Win32NT') { throw 'Setup requires Windows x64.' }
-    $nodeVersion = & node -p 'process.versions.node.split(".")[0]'
-    if ($LASTEXITCODE -ne 0 -or $nodeVersion -ne '24') { throw 'Install Node.js 24 LTS (with npm), then rerun setup.' }
-    $nodePlatform = & node -p 'process.platform + "-" + process.arch'
-    if ($nodePlatform -ne 'win32-x64') { throw 'Install the Windows x64 build of Node.js 24.' }
+    $nodeVersion = & node --version
+    if ($LASTEXITCODE -ne 0 -or $nodeVersion -notmatch '^v24\.') { throw 'Install Node.js 24 LTS (with npm), then rerun setup.' }
+    $nodeArchitecture = & node -p process.arch
+    if ($LASTEXITCODE -ne 0 -or $nodeArchitecture -ne 'x64') { throw 'Install the Windows x64 build of Node.js 24.' }
     $archive = Join-Path $root 'vendor/workspace-template-win32-x64-0.9.0-alpha.0.tgz'
     if ((Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash -ne '95c61b973fd68204289f257fae957589a921d4ff4331f552c11b72015d1d38f5') {
         throw 'Retained archive SHA-256 mismatch. Restore it from Git; do not substitute a same-version build.'
