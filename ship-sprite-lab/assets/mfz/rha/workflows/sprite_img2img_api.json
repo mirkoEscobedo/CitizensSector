@@ -1,0 +1,17 @@
+{
+  "1": {"class_type": "UnetLoaderGGUF", "inputs": {"unet_name": "flux-2-klein-9b-Q6_K.gguf"}, "_meta": {"title": "Klein 9B Q6_K"}},
+  "2": {"class_type": "LoraLoaderModelOnly", "inputs": {"model": ["1", 0], "lora_name": "starsector-x4-klein.safetensors", "strength_model": 1.0}, "_meta": {"title": "Starsector-x4 LoRA"}},
+  "3": {"class_type": "CLIPLoader", "inputs": {"clip_name": "qwen_3_8b_fp8mixed.safetensors", "type": "flux2", "device": "default"}, "_meta": {"title": "Qwen3 8B"}},
+  "4": {"class_type": "VAELoader", "inputs": {"vae_name": "flux2-vae.safetensors"}, "_meta": {"title": "Flux2 VAE"}},
+  "5": {"class_type": "CLIPTextEncode", "inputs": {"text": "Starsector ship sprite on black background.", "clip": ["3", 0]}, "_meta": {"title": "Positive prompt"}},
+  "6": {"class_type": "BasicGuider", "inputs": {"model": ["2", 0], "conditioning": ["5", 0]}, "_meta": {"title": "Guider"}},
+  "7": {"class_type": "LoadImage", "inputs": {"image": "example.png"}, "_meta": {"title": "Init image (uploaded by sprite_tool)"}},
+  "8": {"class_type": "VAEEncode", "inputs": {"pixels": ["7", 0], "vae": ["4", 0]}, "_meta": {"title": "Encode init image"}},
+  "9": {"class_type": "Flux2Scheduler", "inputs": {"steps": 8, "width": 704, "height": 1120}, "_meta": {"title": "Scheduler"}},
+  "10": {"class_type": "SplitSigmasDenoise", "inputs": {"sigmas": ["9", 0], "denoise": 0.6}, "_meta": {"title": "Denoise strength"}},
+  "11": {"class_type": "KSamplerSelect", "inputs": {"sampler_name": "euler"}, "_meta": {"title": "Sampler"}},
+  "12": {"class_type": "RandomNoise", "inputs": {"noise_seed": 0}, "_meta": {"title": "Seed"}},
+  "13": {"class_type": "SamplerCustomAdvanced", "inputs": {"noise": ["12", 0], "guider": ["6", 0], "sampler": ["11", 0], "sigmas": ["10", 1], "latent_image": ["8", 0]}, "_meta": {"title": "Sampler"}},
+  "14": {"class_type": "VAEDecode", "inputs": {"samples": ["13", 0], "vae": ["4", 0]}, "_meta": {"title": "Decode"}},
+  "15": {"class_type": "SaveImage", "inputs": {"images": ["14", 0], "filename_prefix": "claude_sprite/ship"}, "_meta": {"title": "Save"}}
+}

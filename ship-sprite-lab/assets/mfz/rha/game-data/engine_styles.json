@@ -1,0 +1,14 @@
+{
+	# Golden engine flame for the Rha (used by engine slots with "style":"CUSTOM","styleId":"MFZ_GOLD")
+	"MFZ_GOLD":{
+		"engineColor":[255,205,90,255],
+		"contrailParticleSizeMult":4,
+		"contrailParticleDuration":2,
+		"contrailParticleFinalSizeMult":2.5,
+		"contrailMaxSpeedMult":0.5,
+		"contrailAngularVelocityMult":0,
+		"contrailColor":[255,190,80,30],
+		"contrailCampaignColor":[255,200,110,80],
+		"type":"GLOW" # GLOW or SMOKE
+	}
+}

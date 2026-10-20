@@ -1,0 +1,27 @@
+{
+ "prompt": "Starsector ship sprite on black background. 2 wide fighter launch bays on the inner wing roots, 4 small turret mounts and 2 small missile mounts on the wings, 3 engines at the stern. Destroyer, midline tech, light carrier, ancient egyptian winged falcon design. Slender hull with a pointed beak-like prow and broad swept-back wings made of layered feather-shaped armor plates, a round golden sun disc on the centre deck. Dark anthracite armor plating with polished gold trim along the wing feather edges and gold panel lines. Smooth top lighting, deep shadows, high contrast.",
+ "size": [
+  576,
+  1088
+ ],
+ "steps": null,
+ "lora_strength": null,
+ "images": [
+  {
+   "seed": 1588384319,
+   "path": "ra_a_seed1588384319.png"
+  },
+  {
+   "seed": 1588384320,
+   "path": "ra_a_seed1588384320.png"
+  },
+  {
+   "seed": 1588384321,
+   "path": "ra_a_seed1588384321.png"
+  },
+  {
+   "seed": 1588384322,
+   "path": "ra_a_seed1588384322.png"
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+[
+ {
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "x": 20,
+  "y": 100
+ },
+ {
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "x": 116,
+  "y": 100
+ },
+ {
+  "type": "MISSILE",
+  "size": "SMALL",
+  "x": 36,
+  "y": 180
+ },
+ {
+  "type": "MISSILE",
+  "size": "SMALL",
+  "x": 100,
+  "y": 180
+ }
+]
