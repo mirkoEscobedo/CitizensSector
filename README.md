@@ -6,14 +6,14 @@ Private Windows ship-sprite experiments and a shared Codex/Claude workflow. The 
 
 Install Git for Windows, GitHub CLI (`gh`) and **Windows x64 Node.js 24 LTS with npm** on PATH. Tooling installation, doctor and skills do not need Python, a lab virtual environment, private images or the game. Install and authenticate your chosen Codex or Claude Code client separately. Each contributor needs their own GitHub account with repository access; agent subscriptions/login and GitHub authorization are separate.
 
-Run in PowerShell, under any parent directory (spaces are supported):
+Run in Command Prompt, under any parent directory (spaces are supported):
 
-```powershell
+```bat
 gh auth login --hostname github.com --git-protocol https --web
 gh auth setup-git
 gh auth status
 git clone https://github.com/mirkoEscobedo/CitizensSector.git
-Set-Location CitizensSector
+cd CitizensSector
 npm ci
 npm run skills
 npm run workspace-template -- skills show tdd
@@ -23,7 +23,7 @@ npm run doctor
 
 Before this PR is merged, add `--branch task/1-windows-onboarding` to `git clone`. After merge, the default branch remains `master`.
 
-`npm ci` installs the exact retained archive from the committed manifest and lockfile. `.npmrc` keeps npm offline and disables install scripts; no registry, sibling checkout, source build or package publication is needed. Repeating installation leaves tracked files unchanged. Contributors do **not** run `npm init` against this already-configured repository. If PowerShell execution policy blocks `npm.ps1`, use `npm.cmd` for the same npm commands.
+`npm ci` installs the exact retained archive from the committed manifest and lockfile. `.npmrc` keeps npm offline and disables install scripts; no registry, sibling checkout, source build or package publication is needed. Repeating installation leaves tracked files unchanged. Contributors do **not** run `npm init` against this already-configured repository. In PowerShell, use `npm.cmd` for the same npm commands: this avoids execution-policy restrictions and preserves `--` argument forwarding when an installed `npm.ps1` shim consumes it.
 
 The scripts call the installed package directly using npm's normal executable shims. The managed `npm exec -- workspace-template ...` instructions also work after installation. Installation consumes the committed managed blocks and `.agentic/project.json`; it does not re-adopt on each clone. Exact archive/executable hashes and measured integrity checks remain in [vendor/README.md](vendor/README.md) and [the verification record](docs/ONBOARDING-VERIFICATION.md).
 
@@ -33,8 +33,8 @@ For lab tasks, install **Python 3.12+ with pip/venv** on PATH. From the reposito
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\ship-sprite-lab\scripts\setup.ps1
-npm run lab -- doctor
-npm run check
+npm.cmd run lab -- doctor
+npm.cmd run check
 ```
 
 The lab setup creates an isolated `ship-sprite-lab/.venv`, installs the lab and runs its doctor. The first Python install **does need separate PyPI/package downloads**: setuptools>=68 (build backend), Pillow==12.3.0 and numpy==2.3.5. Subsequent lab setup can still contact PyPI for build dependencies. Python offline installation requires a separately prepared compatible wheelhouse; the npm offline guarantee does not cover Python.
@@ -86,7 +86,7 @@ git rev-parse HEAD
 codex
 # Or run: claude
 # For lab work, run the separate lab setup above before checking:
-npm run check
+npm.cmd run check
 git diff --check
 git status --short
 git add --interactive
