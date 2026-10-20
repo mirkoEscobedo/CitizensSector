@@ -15,7 +15,7 @@ def doctor():
     models=[str(p.relative_to(ROOT)) for ext in ('*.blend','*.obj','*.fbx','*.glb','*.gltf') for p in REFS.rglob(ext)]
     data={'python':sys.version,'executable':sys.executable,'platform':platform.platform(),
           'versions':{n:importlib.metadata.version(n) for n in ('Pillow','numpy')},
-          'dependency_mode':'scoped venv, system-site-packages from read-only bundled runtime; pip bootstrap not required',
+          'dependency_mode':'repository-local venv; see .venv/pyvenv.cfg for isolation',
           'blender':blender,'blender_probes':probes,'render_engines':'UNKNOWN; no executable discovered' if not blender else 'requires engine probe',
           'source_models':models,'editable_friend_source':False,'game_install':str(game),
           'game_available':(game/'starsector-core/data/hulls/eagle.ship').exists(),

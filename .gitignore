@@ -35,3 +35,17 @@ outputs/
 reference-private/
 *.blend1
 
+# workspace-template:thin-state:start
+!.agentic/
+.agentic/*
+!.agentic/project.json
+!.agentic/history/
+.agentic/history/*
+!.agentic/history/migration-index.json
+!.agentic/resumption/
+!.agentic/resumption/**
+# workspace-template:thin-state:end
+
+# Repository-local development tooling and onboarding verification
+node_modules/
+.onboarding-cache/

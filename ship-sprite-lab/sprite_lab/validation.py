@@ -86,7 +86,8 @@ def edge_overlay(ref,im,path):
     out[a&b]=[100,111,126]; out[a&~b]=[230,50,80]; out[b&~a]=[20,220,220]
     path.parent.mkdir(parents=True,exist_ok=True); Image.fromarray(out).save(path)
 
-def meaningful_tests():
+def software_tests():
+    """Existing math/image/data gates, runnable without generated art or game data."""
     # Reversibility, handedness, real small opening, compositing edge colors.
     points=[(2,533),(510,776),(510,290),(170,533),(1710,54)]
     roundtrip=max(float(np.linalg.norm(np.array(inverse(point(p)))-p)) for p in points)
@@ -109,14 +110,20 @@ def meaningful_tests():
     manifest=load_json(ASSETS/'manifest.json')
     for key in ('sources','canonical','landmarks','export','materials','geometry'):
         assert key in manifest,key
-    export=load_json(OUT/'export/idris_lab/data/hulls/idris_lab.ship')
-    assert export['weaponSlots']==[],'Baked turrets must not be duplicated'
     center=manifest['export']['center_from_bottom_left']
     for p in [point(p) for p in points]:
         game=[672-center[1]-p[1],center[0]-p[0]]
         back=[center[0]-game[1],672-center[1]-game[0]]
         assert np.linalg.norm(np.array(p)-back)<1e-8
     result={'passed':7,'checks':['source/canonical transform round trips','bow and left/right handedness','four observed transparent sample openings',
-        'linear premultiplied edge behavior on black/white','small synthetic opening resize','required manifest fields and no doubled turrets','canonical/game transform round trip'],
+        'linear premultiplied edge behavior on black/white','small synthetic opening resize','required manifest fields','canonical/game transform round trip'],
         'largest_source_roundtrip_error_px':roundtrip,'scope':'software and data checks, no in-game execution'}
+    return result
+
+
+def meaningful_tests():
+    result=software_tests()
+    export=load_json(OUT/'export/idris_lab/data/hulls/idris_lab.ship')
+    assert export['weaponSlots']==[],'Baked turrets must not be duplicated'
+    result['checks'][5]='required manifest fields and no doubled turrets'
     save_json(OUT/'tests.json',result); return result

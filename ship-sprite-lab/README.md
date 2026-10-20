@@ -7,9 +7,10 @@ Everything created by this experiment stays in this folder, apart from the image
 ## Windows PowerShell
 
 ```powershell
-Set-Location 'E:\github\CitizensSector\ship-sprite-lab'
+Set-Location .\ship-sprite-lab # from your CitizensSector clone
 ./scripts/setup.ps1
 ./.venv/Scripts/python.exe -m sprite_lab doctor
+./.venv/Scripts/python.exe -m sprite_lab check
 ./.venv/Scripts/python.exe -m sprite_lab run --ship idris --methods available
 ./.venv/Scripts/python.exe -m sprite_lab compare --ship idris
 ./.venv/Scripts/python.exe -m sprite_lab validate --ship idris
@@ -17,7 +18,7 @@ Set-Location 'E:\github\CitizensSector\ship-sprite-lab'
 Start-Process ./outputs/idris/report.html
 ```
 
-The supplied local environment is Python 3.12.14, Pillow 12.3.0, NumPy 2.3.5. `.venv` inherits those read-only bundled packages; no global environment was changed and no dependency download was required. `doctor` records actual versions and paths. On another machine use Python 3.12+, `python -m venv .venv`, activate it, then `python -m pip install -e .`. Run `python -m sprite_lab …` from this folder. Set `STARSECTOR_HOME` for native-reference discovery; edit `experiment.json` for the export installation and experiment defaults. Missing game data blocks the example-based export/native cohort, not baseline generation.
+Use the [root setup command](../README.md) for a new clone. Python 3.12+ is required; Pillow 12.3.0 and NumPy 2.3.5 are pinned. Setup creates an isolated local `.venv` with pip, installs the lab (initial Python package downloads required), and runs `doctor`. A legacy shared-runtime `.venv` must be moved aside before rerunning setup; no maintainer-specific runtime is used. `doctor` records actual versions and paths. `check` reuses seven software/data gates without private generated outputs or game data. Run `python -m sprite_lab …` from this folder using the venv interpreter. Set `STARSECTOR_HOME` for native-reference discovery; edit `experiment.json` for the export installation and experiment defaults. Missing game data blocks the example-based export/native cohort, not baseline generation.
 
 `run --methods baseline` regenerates only the fast normalized sources. `run --methods available` uses the saved image-model result and caches deterministic rendering; `--force` re-renders deterministic outputs without any image-provider call. Ctrl+C retains completed images and cached provider output. The CLI launches no local model server, Blender or game process and owns no unrelated processes. The initial lab never installed Blender or used other development environments.
 

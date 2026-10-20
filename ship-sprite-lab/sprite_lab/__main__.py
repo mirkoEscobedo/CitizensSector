@@ -12,6 +12,7 @@ def main():
     parser=argparse.ArgumentParser(description='Private, geometry-controlled ship sprite experiment')
     sub=parser.add_subparsers(dest='command',required=True)
     sub.add_parser('doctor')
+    sub.add_parser('check',help='Run software/data gates without private outputs or a game installation')
     for cmd in ('run','compare','validate','export'):
         p=sub.add_parser(cmd); p.add_argument('--ship',choices=['idris'],default='idris')
         if cmd=='run':
@@ -20,6 +21,9 @@ def main():
         if cmd=='export': p.add_argument('--candidate',default='A04')
     args=parser.parse_args()
     try:
+        if args.command=='check':
+            from .validation import software_tests
+            print(json.dumps(software_tests(),indent=2)); return
         if args.command=='doctor':
             from .environment import doctor
             print(json.dumps(doctor(),indent=2)); return
