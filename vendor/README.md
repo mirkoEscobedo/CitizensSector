@@ -16,7 +16,7 @@ Adoption used this installed executable after inspecting `help`, `instructions`,
 
 ```powershell
 $tool = '.\node_modules\workspace-template-win32-x64\bin\workspace-template.exe'
-if (-not (Test-Path -LiteralPath $tool)) { throw 'Run setup first' }
+if (-not (Test-Path -LiteralPath $tool)) { throw 'Run npm ci first' }
 & $tool adopt plan . --plan-out .onboarding-cache/adopt-plan.json
 # Review operations/conflicts before applying the sealed plan:
 & $tool adopt apply . --apply-plan .onboarding-cache/adopt-plan.json

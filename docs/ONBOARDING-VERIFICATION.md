@@ -1,4 +1,6 @@
-# Windows onboarding evidence — issue #1
+# Historical Windows onboarding evidence — superseded bootstrap path
+
+The evidence below describes the earlier PowerShell bootstrap implementation through `353d2d5a26488c4f5760c284c7f23fd458680fef`. That root bootstrap and custom package launcher were removed by the direct npm scope correction. Commands below are retained as history, not current onboarding instructions or proof of the corrected path. Current contributor commands are in README.md; corrected-path results are recorded separately above this history when available.
 
 Implementation owner: mirkoEscobedo. Assistant: Codex. Branch: `task/1-windows-onboarding`, targeting existing `master`. Implementation tested at `d21d0ff` (full commit in Git history); later documentation-only changes record this evidence. No other human editor or sprite asset editor is active in this task. Dependencies: approved retained archive; separately installed Windows prerequisites and first-use Python package downloads. Acceptance criteria remain in [issue #1](https://github.com/mirkoEscobedo/CitizensSector/issues/1).
 

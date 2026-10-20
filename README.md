@@ -2,9 +2,9 @@
 
 Private Windows ship-sprite experiments and a shared Codex/Claude workflow. The lab and original inputs remain in [ship-sprite-lab](ship-sprite-lab/README.md). Tooling provenance is in [vendor/README.md](vendor/README.md).
 
-## Clone and set up
+## Clone and install tooling
 
-Install Git for Windows, GitHub CLI (`gh`), **Windows x64 Node.js 24 LTS with npm**, and **Python 3.12+ with pip/venv** on PATH. Windows PowerShell 5.1 is sufficient. Install and authenticate your chosen Codex or Claude Code client separately. Each contributor needs their own GitHub account with repository access; agent subscriptions/login and GitHub authorization are separate.
+Install Git for Windows, GitHub CLI (`gh`) and **Windows x64 Node.js 24 LTS with npm** on PATH. Tooling installation, doctor and skills do not need Python, a lab virtual environment, private images or the game. Install and authenticate your chosen Codex or Claude Code client separately. Each contributor needs their own GitHub account with repository access; agent subscriptions/login and GitHub authorization are separate.
 
 Run in PowerShell, under any parent directory (spaces are supported):
 
@@ -14,12 +14,30 @@ gh auth setup-git
 gh auth status
 git clone https://github.com/mirkoEscobedo/CitizensSector.git
 Set-Location CitizensSector
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\setup.ps1
+npm ci
+npm run skills
+npm run workspace-template -- skills show tdd
+npm run workspace-template -- version --json
+npm run doctor
 ```
 
 Before this PR is merged, add `--branch task/1-windows-onboarding` to `git clone`. After merge, the default branch remains `master`.
 
-The single setup command installs only the retained npm archive using `npm ci --offline` and the lockfile, validates archive/executable hashes, runs package version/doctor/skills, and reuses the lab setup to create an isolated `ship-sprite-lab/.venv`, install the lab, and run its seven software/data checks. It is safe to rerun and does not edit tracked files. npm needs no registry or sibling checkout and uses a repository-local cache. The first Python install **does need separate PyPI/package downloads**: setuptools>=68 (build backend), Pillow==12.3.0 and numpy==2.3.5. Subsequent setup can still contact PyPI for build dependencies. Python offline installation requires a separately prepared compatible wheelhouse; the npm offline guarantee does not cover Python.
+`npm ci` installs the exact retained archive from the committed manifest and lockfile. `.npmrc` keeps npm offline and disables install scripts; no registry, sibling checkout, source build or package publication is needed. Repeating installation leaves tracked files unchanged. Contributors do **not** run `npm init` against this already-configured repository. If PowerShell execution policy blocks `npm.ps1`, use `npm.cmd` for the same npm commands.
+
+The scripts call the installed package directly using npm's normal executable shims. The managed `npm exec -- workspace-template ...` instructions also work after installation. Installation consumes the committed managed blocks and `.agentic/project.json`; it does not re-adopt on each clone. Exact archive/executable hashes and measured integrity checks remain in [vendor/README.md](vendor/README.md) and [the verification record](docs/ONBOARDING-VERIFICATION.md).
+
+## Set up the Python lab separately
+
+For lab tasks, install **Python 3.12+ with pip/venv** on PATH. From the repository root, using Windows PowerShell 5.1 or later:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\ship-sprite-lab\scripts\setup.ps1
+npm run lab -- doctor
+npm run check
+```
+
+The lab setup creates an isolated `ship-sprite-lab/.venv`, installs the lab and runs its doctor. The first Python install **does need separate PyPI/package downloads**: setuptools>=68 (build backend), Pillow==12.3.0 and numpy==2.3.5. Subsequent lab setup can still contact PyPI for build dependencies. Python offline installation requires a separately prepared compatible wheelhouse; the npm offline guarantee does not cover Python.
 
 If `python` is unavailable or selects the wrong interpreter, append `-Python 'C:\path with spaces\Python312\python.exe'`. A failed dependency install can be repaired by rerunning setup. An old shared-runtime lab `.venv` is preserved and rejected: move it aside before setup (do not reuse its machine-specific bundled Python). All new dependencies stay local; activation is optional.
 
@@ -29,17 +47,16 @@ Run commands from the repository root:
 
 | Command | Purpose |
 | --- | --- |
-| `npm.cmd run check` | Seven existing math/image/data checks, independent of private outputs and game |
-| `npm.cmd run doctor` | Packaged workspace health |
-| `npm.cmd run skills` | Exact installed methodology inventory |
-| `npm.cmd run workspace-template -- version` | Installed tool identity |
-| `npm.cmd run workspace-template -- verify . --scope all` | Run CitizensSector's configured check under the packaged process supervisor |
-| `npm.cmd run lab -- doctor` | Python dependencies and optional local capabilities |
-| `npm.cmd run lab -- validate --ship idris` | Art gates and export checks; requires generated candidates/raw input/export |
+| `npm run skills` | Installed methodology inventory; tooling only |
+| `npm run workspace-template -- skills show tdd` | Read the installed TDD skill; tooling only |
+| `npm run workspace-template -- version --json` | Installed tool identity; tooling only |
+| `npm run doctor` | Packaged workspace health; tooling only |
+| `npm run check` | After lab setup: seven math/image/data checks, independent of private outputs and game |
+| `npm run workspace-template -- verify . --scope all` | After lab setup: run CitizensSector's configured check under the packaged process supervisor |
+| `npm run lab -- doctor` | After lab setup: Python dependencies and optional local capabilities |
+| `npm run lab -- validate --ship idris` | After lab setup: art gates and export checks; requires generated candidates/raw input/export |
 
-Use the guarded `workspace-template` npm script; it fails with setup instructions if the local executable is missing. `.npmrc` keeps npm offline and disables install scripts. Do not use `npx` or download a same-version substitute. Installation/adoption are separate: setup consumes the already committed managed blocks and `.agentic/project.json`; it does not re-adopt on every clone.
-
-In this retained alpha, optional `update status` returns `INCOMPLETE` because it reports the approved `file:` dependency as `manifest.exact=false`. Its installed binary, lock version/integrity presence and project provenance fields match. Use setup's actual hash checks and `doctor` for identity evidence; do not switch to a registry dependency to silence this status.
+In this retained alpha, optional `update status` returns `INCOMPLETE` because it reports the approved `file:` dependency as `manifest.exact=false`. Its installed binary, lock version/integrity presence and project provenance fields match. See the recorded hash checks and `doctor` for identity evidence; do not switch to a registry dependency to silence this status.
 
 Onboarding needs no private game art, model, generated provider response, Blender or API key and makes no image-provider calls or game launches. Supplied reference PNGs are already tracked in `ship-sprite-lab/docs/references`; their presence does not grant redistribution rights. Full `run --methods available` needs the authorized cached provider PNG at `ship-sprite-lab/outputs/idris/raw/M4-attempt-01.png` (not in Git). Obtain that exact original and provenance from the human owner; do not substitute an image or invoke a provider during setup. `compare`/`validate` require candidate outputs; export validation also needs `outputs/idris/export/idris_lab/data/hulls/idris_lab.ship`. Missing outputs are actionable prerequisites, not a software-check failure.
 
@@ -68,8 +85,8 @@ git switch -c $branch
 git rev-parse HEAD
 codex
 # Or run: claude
-# Work with the agent, then inspect the diff and check evidence:
-npm.cmd run check
+# For lab work, run the separate lab setup above before checking:
+npm run check
 git diff --check
 git status --short
 git add --interactive
