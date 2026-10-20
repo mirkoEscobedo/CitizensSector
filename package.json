@@ -1,0 +1,17 @@
+{
+  "name": "citizens-sector",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local Windows collaboration tooling for CitizensSector's ship sprite lab.",
+  "engines": { "node": "24.x" },
+  "scripts": {
+    "workspace-template": "workspace-template",
+    "skills": "workspace-template skills list",
+    "doctor": "workspace-template doctor .",
+    "check": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/check.ps1",
+    "lab": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/lab.ps1"
+  },
+  "devDependencies": {
+    "workspace-template-win32-x64": "file:vendor/workspace-template-win32-x64-0.9.0-alpha.0.tgz"
+  }
+}
