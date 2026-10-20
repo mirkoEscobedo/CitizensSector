@@ -106,9 +106,9 @@ assets/mfz/rha/scripts/                  mirror.py, finish_b.py, make_ship.py (d
 assets/mfz/rha/previews/                 two derived previews from the contributor's session
 ```
 
-Transformations (each recorded in the manifest with both hashes): manifests' image paths reduced to file names; CSV rows extracted for Rha only; the three scripts had machine paths replaced by `<STAGING_DIR>`, `<MOD_DIR>`, `<STARSECTOR_HOME>` — they document the method and are **not runnable as-is**. The sprite, `.ship`, `.variant`, style configs, workflows and raw/intermediate PNGs are byte-identical to the sources.
+Transformations (each recorded in the manifest with both hashes): manifests' image paths reduced to file names; CSV rows extracted for Rha only; the three scripts had machine paths replaced by `<STAGING_DIR>`, `<MOD_DIR>`, `<STARSECTOR_HOME>` — they document the method and are **not runnable as-is**. The `.ship` and `stamped_sockets.json` have CRLF line endings normalised to LF; `hull_styles.json` has trailing tabs removed from two blank lines. The sprite, `.variant`, engine style config, workflows and raw/intermediate PNGs are byte-identical to the sources.
 
-Hashes of text files are of the LF content as committed; on Windows with `core.autocrlf` a working copy may show CRLF and a different file hash.
+Destination hashes and byte counts describe the committed files (LF for text); source hashes retain the original source bytes. On Windows with `core.autocrlf` a working copy may show CRLF and a different file hash.
 
 Status stays **candidate**. Nothing in this intake claims correct hardpoints, art quality or game readiness.
 
@@ -133,6 +133,12 @@ The issue describes Idris/Odin requirements: front hangar gates, vertical thrust
 | Art/game evidence | **unavailable**: no `lab validate`, no Starsector load, no 100/50/25 % review of the actual sprite |
 
 Prior contributors' verification (README, `docs/ONBOARDING-VERIFICATION.md`) was not reused as evidence for any item above.
+
+### PR #7 review correction (Codex, 2026-10-20)
+
+Review of intake commit `e95fd85e94901b02f827c9a9ac28fade6f467c3b` found two destination hashes/byte counts still describing CRLF source bytes and two trailing-whitespace errors in `hull_styles.json`. This supersedes the corresponding clean-diff and zero-mismatch claims above for that commit. The correction retains every source hash, records newline normalisation for the hull and socket metadata, removes the two whitespace errors, and updates the hull-style destination hash/byte count for that cleanup.
+
+Verification on the maintainer's checkout: all 22 manifest destinations match the staged Git blobs in both SHA-256 and byte count; the full PR diff passes `git diff --cached --check bc26b4b479f83e683a70c2d37f110be903020175`; `npm.cmd run check` passes 7/7; `npm.cmd run workspace-template -- verify . --scope all` returns PASS. These checks cover the metadata correction and software gates; source-folder preservation, contributor onboarding and art/game readiness were not re-tested by this correction.
 
 ## 8. Ordered follow-up plan
 

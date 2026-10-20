@@ -23,7 +23,7 @@
 		"explosionShipSet":"explosion_ship",			# id of entry in sounds.json
 		"damageDecalSheet":"graphics/damage/damage_decal_sheet_base.png",
 		"damageDecalGlowSheet":"graphics/damage/damage_decal_sheet_glow.png",
-		
+
 		"colorShiftCovers":true,
 		"coversColorShiftAmount":0.9,  # 0 to 1
 		"coversMatchShipBrightness":true,
@@ -33,7 +33,7 @@
 		"slotCoverMediumHardpoint":"graphics/weapons/covers/cover_hardpoint_midline_medium.png",
 		"slotCoverLargeTurret":"graphics/weapons/covers/cover_turret_midline_large.png",
 		"slotCoverLargeHardpoint":"graphics/weapons/covers/cover_hardpoint_midline_large.png",
-		
+
 		"dHullOverlayLight":"graphics/damage/dmod_overlay_midline_light.png",
 		"dHullOverlayMedium":"graphics/damage/dmod_overlay_midline_medium.png",
 		"dHullOverlayHeavy":"graphics/damage/dmod_overlay_midline_heavy.png",

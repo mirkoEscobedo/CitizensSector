@@ -17,11 +17,11 @@
    "source": "source:mod/data/hulls/mfz_rha.ship",
    "source_sha256": "268594ce8085f0744d7ea182ce851ea3fcb6e1269bcc416822ff03bd716f0cfa",
    "destination": "ship-sprite-lab/assets/mfz/rha/game-data/mfz_rha.ship",
-   "destination_sha256": "268594ce8085f0744d7ea182ce851ea3fcb6e1269bcc416822ff03bd716f0cfa",
-   "bytes": 2784,
+   "destination_sha256": "1d9befee250e16a7672053762e2712d91e868abf7f08c017ae29f0a2ced99346",
+   "bytes": 2675,
    "kind": "hull",
    "role": "Starsector hull definition (guessed slot angles/arcs; untested in game)",
-   "transformation": "none (byte-identical copy)"
+   "transformation": "CRLF line endings normalised to LF for the committed file"
   },
   {
    "source": "source:mod/data/variants/mfz_rha_standard.variant",
@@ -47,11 +47,11 @@
    "source": "source:mod/data/config/hull_styles.json",
    "source_sha256": "76928b58935e4f2c74b030b65b2b18288ce215eed012625469a8f9c8a6cb8254",
    "destination": "ship-sprite-lab/assets/mfz/rha/game-data/hull_styles.json",
-   "destination_sha256": "76928b58935e4f2c74b030b65b2b18288ce215eed012625469a8f9c8a6cb8254",
-   "bytes": 2259,
+   "destination_sha256": "e5ea78e45d90a7221adb8a757d06e1d1d7952245e341c30066410163c26d5125",
+   "bytes": 2255,
    "kind": "config",
    "role": "MFZ_RHA hull style (MIDLINE copy with gold colours)",
-   "transformation": "none (byte-identical copy)"
+   "transformation": "removed trailing tabs from two blank lines"
   },
   {
    "source": "source:mod/data/hulls/ship_data.csv",
@@ -77,11 +77,11 @@
    "source": "source:staging/raB_armed_slots.json",
    "source_sha256": "611b2fbc6c9140baa36d32862dd92ec31df62c869faf25f75a4d0204d99be5b4",
    "destination": "ship-sprite-lab/assets/mfz/rha/generation/stamped_sockets.json",
-   "destination_sha256": "611b2fbc6c9140baa36d32862dd92ec31df62c869faf25f75a4d0204d99be5b4",
-   "bytes": 309,
+   "destination_sha256": "af3e4d8aff63ff045c897a0ca8f5a2356485999438f08269232b82b558e173f1",
+   "bytes": 284,
    "kind": "metadata",
    "role": "socket stamp positions written by finish_b.py (sprite px, y down = stern)",
-   "transformation": "none (byte-identical copy)"
+   "transformation": "CRLF line endings normalised to LF for the committed file"
   },
   {
    "source": "source:staging/gen_20261020_165553/ra_a_manifest.json",
