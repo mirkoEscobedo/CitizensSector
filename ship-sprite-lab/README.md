@@ -7,7 +7,7 @@ Everything created by this experiment stays in this folder, apart from the image
 ## Windows PowerShell
 
 ```powershell
-Set-Location 'E:\github\CitezSector\ship-sprite-lab'
+Set-Location 'E:\github\CitizensSector\ship-sprite-lab'
 ./scripts/setup.ps1
 ./.venv/Scripts/python.exe -m sprite_lab doctor
 ./.venv/Scripts/python.exe -m sprite_lab run --ship idris --methods available
