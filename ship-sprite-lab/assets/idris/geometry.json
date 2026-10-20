@@ -1,0 +1,1296 @@
+{
+  "annotation_frame": "original gray source pixels, x right/y down; inferred; uncertainty \u00b12 final pixels",
+  "regions": [
+    {
+      "name": "forward_shoulder",
+      "material": "paint",
+      "polygon_source": [
+        [
+          100,
+          490
+        ],
+        [
+          500,
+          285
+        ],
+        [
+          657,
+          282
+        ],
+        [
+          664,
+          326
+        ],
+        [
+          575,
+          475
+        ],
+        [
+          398,
+          491
+        ]
+      ],
+      "height_semantic": 2
+    },
+    {
+      "name": "forward_shoulder_opposite",
+      "material": "paint",
+      "polygon_source": [
+        [
+          100,
+          576
+        ],
+        [
+          500,
+          781
+        ],
+        [
+          657,
+          784
+        ],
+        [
+          664,
+          740
+        ],
+        [
+          575,
+          591
+        ],
+        [
+          398,
+          575
+        ]
+      ],
+      "height_semantic": 2
+    },
+    {
+      "name": "shoulder_lit_plate",
+      "material": "pale",
+      "polygon_source": [
+        [
+          180,
+          468
+        ],
+        [
+          516,
+          299
+        ],
+        [
+          577,
+          329
+        ],
+        [
+          411,
+          480
+        ]
+      ],
+      "height_semantic": 2.2
+    },
+    {
+      "name": "shoulder_lit_plate_opposite",
+      "material": "pale",
+      "polygon_source": [
+        [
+          180,
+          598
+        ],
+        [
+          516,
+          767
+        ],
+        [
+          577,
+          737
+        ],
+        [
+          411,
+          586
+        ]
+      ],
+      "height_semantic": 2.2
+    },
+    {
+      "name": "forward_center_spine",
+      "material": "pale",
+      "polygon_source": [
+        [
+          50,
+          512
+        ],
+        [
+          180,
+          495
+        ],
+        [
+          568,
+          494
+        ],
+        [
+          614,
+          475
+        ],
+        [
+          634,
+          488
+        ],
+        [
+          634,
+          579
+        ],
+        [
+          614,
+          591
+        ],
+        [
+          568,
+          574
+        ],
+        [
+          180,
+          571
+        ],
+        [
+          50,
+          550
+        ]
+      ],
+      "height_semantic": 2
+    },
+    {
+      "name": "lateral_deck",
+      "material": "paint",
+      "polygon_source": [
+        [
+          670,
+          325
+        ],
+        [
+          735,
+          281
+        ],
+        [
+          969,
+          281
+        ],
+        [
+          968,
+          317
+        ],
+        [
+          1292,
+          318
+        ],
+        [
+          1350,
+          440
+        ],
+        [
+          665,
+          440
+        ]
+      ],
+      "height_semantic": 1.3
+    },
+    {
+      "name": "lateral_deck_opposite",
+      "material": "paint",
+      "polygon_source": [
+        [
+          670,
+          741
+        ],
+        [
+          735,
+          785
+        ],
+        [
+          969,
+          785
+        ],
+        [
+          968,
+          749
+        ],
+        [
+          1292,
+          748
+        ],
+        [
+          1350,
+          626
+        ],
+        [
+          665,
+          626
+        ]
+      ],
+      "height_semantic": 1.3
+    },
+    {
+      "name": "lateral_plate",
+      "material": "pale",
+      "polygon_source": [
+        [
+          711,
+          341
+        ],
+        [
+          852,
+          328
+        ],
+        [
+          1058,
+          332
+        ],
+        [
+          1100,
+          362
+        ],
+        [
+          1080,
+          406
+        ],
+        [
+          690,
+          406
+        ]
+      ],
+      "height_semantic": 1.8
+    },
+    {
+      "name": "lateral_plate_opposite",
+      "material": "pale",
+      "polygon_source": [
+        [
+          711,
+          725
+        ],
+        [
+          852,
+          738
+        ],
+        [
+          1058,
+          734
+        ],
+        [
+          1100,
+          704
+        ],
+        [
+          1080,
+          660
+        ],
+        [
+          690,
+          660
+        ]
+      ],
+      "height_semantic": 1.8
+    },
+    {
+      "name": "main_deck",
+      "material": "pale",
+      "polygon_source": [
+        [
+          634,
+          464
+        ],
+        [
+          1181,
+          464
+        ],
+        [
+          1265,
+          492
+        ],
+        [
+          1281,
+          573
+        ],
+        [
+          1180,
+          603
+        ],
+        [
+          634,
+          603
+        ]
+      ],
+      "height_semantic": 2
+    },
+    {
+      "name": "center_raised_deck",
+      "material": "framing",
+      "polygon_source": [
+        [
+          691,
+          510
+        ],
+        [
+          888,
+          504
+        ],
+        [
+          921,
+          520
+        ],
+        [
+          921,
+          548
+        ],
+        [
+          888,
+          563
+        ],
+        [
+          691,
+          556
+        ]
+      ],
+      "height_semantic": 2.6
+    },
+    {
+      "name": "aft_inner_bed",
+      "material": "machinery",
+      "polygon_source": [
+        [
+          1320,
+          243
+        ],
+        [
+          1610,
+          248
+        ],
+        [
+          1680,
+          407
+        ],
+        [
+          1565,
+          449
+        ],
+        [
+          1371,
+          417
+        ]
+      ],
+      "height_semantic": 0.5
+    },
+    {
+      "name": "aft_inner_bed_opposite",
+      "material": "machinery",
+      "polygon_source": [
+        [
+          1320,
+          823
+        ],
+        [
+          1610,
+          818
+        ],
+        [
+          1680,
+          659
+        ],
+        [
+          1565,
+          617
+        ],
+        [
+          1371,
+          649
+        ]
+      ],
+      "height_semantic": 0.5
+    },
+    {
+      "name": "aft_outer_frame",
+      "material": "paint",
+      "polygon_source": [
+        [
+          1098,
+          146
+        ],
+        [
+          1210,
+          106
+        ],
+        [
+          1659,
+          116
+        ],
+        [
+          1692,
+          199
+        ],
+        [
+          1750,
+          317
+        ],
+        [
+          1800,
+          354
+        ],
+        [
+          1940,
+          415
+        ],
+        [
+          1915,
+          468
+        ],
+        [
+          1710,
+          407
+        ],
+        [
+          1650,
+          317
+        ],
+        [
+          1595,
+          181
+        ],
+        [
+          1227,
+          181
+        ],
+        [
+          1162,
+          227
+        ],
+        [
+          1124,
+          217
+        ]
+      ],
+      "height_semantic": 1.5
+    },
+    {
+      "name": "aft_outer_frame_opposite",
+      "material": "paint",
+      "polygon_source": [
+        [
+          1098,
+          920
+        ],
+        [
+          1210,
+          960
+        ],
+        [
+          1659,
+          950
+        ],
+        [
+          1692,
+          867
+        ],
+        [
+          1750,
+          749
+        ],
+        [
+          1800,
+          712
+        ],
+        [
+          1940,
+          651
+        ],
+        [
+          1915,
+          598
+        ],
+        [
+          1710,
+          659
+        ],
+        [
+          1650,
+          749
+        ],
+        [
+          1595,
+          885
+        ],
+        [
+          1227,
+          885
+        ],
+        [
+          1162,
+          839
+        ],
+        [
+          1124,
+          849
+        ]
+      ],
+      "height_semantic": 1.5
+    },
+    {
+      "name": "aft_cross_brace",
+      "material": "framing",
+      "polygon_source": [
+        [
+          1270,
+          223
+        ],
+        [
+          1310,
+          227
+        ],
+        [
+          1402,
+          428
+        ],
+        [
+          1378,
+          452
+        ],
+        [
+          1347,
+          450
+        ],
+        [
+          1320,
+          362
+        ]
+      ],
+      "height_semantic": 2.1
+    },
+    {
+      "name": "aft_cross_brace_opposite",
+      "material": "framing",
+      "polygon_source": [
+        [
+          1270,
+          843
+        ],
+        [
+          1310,
+          839
+        ],
+        [
+          1402,
+          638
+        ],
+        [
+          1378,
+          614
+        ],
+        [
+          1347,
+          616
+        ],
+        [
+          1320,
+          704
+        ]
+      ],
+      "height_semantic": 2.1
+    },
+    {
+      "name": "stern_assembly_base",
+      "material": "paint",
+      "polygon_source": [
+        [
+          1682,
+          409
+        ],
+        [
+          1799,
+          372
+        ],
+        [
+          1950,
+          418
+        ],
+        [
+          2014,
+          482
+        ],
+        [
+          2030,
+          534
+        ],
+        [
+          2014,
+          588
+        ],
+        [
+          1950,
+          650
+        ],
+        [
+          1799,
+          694
+        ],
+        [
+          1682,
+          657
+        ]
+      ],
+      "height_semantic": 1.6
+    },
+    {
+      "name": "aft_center_spear",
+      "material": "pale",
+      "polygon_source": [
+        [
+          1210,
+          530
+        ],
+        [
+          1253,
+          502
+        ],
+        [
+          1330,
+          501
+        ],
+        [
+          1590,
+          519
+        ],
+        [
+          1615,
+          535
+        ],
+        [
+          1590,
+          553
+        ],
+        [
+          1330,
+          566
+        ],
+        [
+          1253,
+          565
+        ]
+      ],
+      "height_semantic": 3
+    },
+    {
+      "name": "forward_pod",
+      "material": "paint",
+      "polygon_source": [
+        [
+          610,
+          204
+        ],
+        [
+          655,
+          190
+        ],
+        [
+          893,
+          190
+        ],
+        [
+          925,
+          205
+        ],
+        [
+          932,
+          231
+        ],
+        [
+          905,
+          247
+        ],
+        [
+          650,
+          248
+        ],
+        [
+          610,
+          233
+        ]
+      ],
+      "height_semantic": 1.7
+    },
+    {
+      "name": "forward_pod_opposite",
+      "material": "paint",
+      "polygon_source": [
+        [
+          610,
+          862
+        ],
+        [
+          655,
+          876
+        ],
+        [
+          893,
+          876
+        ],
+        [
+          925,
+          861
+        ],
+        [
+          932,
+          835
+        ],
+        [
+          905,
+          819
+        ],
+        [
+          650,
+          818
+        ],
+        [
+          610,
+          833
+        ]
+      ],
+      "height_semantic": 1.7
+    },
+    {
+      "name": "aft_pod",
+      "material": "paint",
+      "polygon_source": [
+        [
+          1353,
+          39
+        ],
+        [
+          1381,
+          21
+        ],
+        [
+          1602,
+          19
+        ],
+        [
+          1680,
+          25
+        ],
+        [
+          1709,
+          49
+        ],
+        [
+          1709,
+          71
+        ],
+        [
+          1661,
+          88
+        ],
+        [
+          1381,
+          85
+        ],
+        [
+          1353,
+          69
+        ]
+      ],
+      "height_semantic": 1.7
+    },
+    {
+      "name": "aft_pod_opposite",
+      "material": "paint",
+      "polygon_source": [
+        [
+          1353,
+          1027
+        ],
+        [
+          1381,
+          1045
+        ],
+        [
+          1602,
+          1047
+        ],
+        [
+          1680,
+          1041
+        ],
+        [
+          1709,
+          1017
+        ],
+        [
+          1709,
+          995
+        ],
+        [
+          1661,
+          978
+        ],
+        [
+          1381,
+          981
+        ],
+        [
+          1353,
+          997
+        ]
+      ],
+      "height_semantic": 1.7
+    },
+    {
+      "name": "lateral_service_box_755",
+      "material": "machinery",
+      "polygon_source": [
+        [
+          739,
+          337
+        ],
+        [
+          773,
+          337
+        ],
+        [
+          773,
+          394
+        ],
+        [
+          739,
+          394
+        ]
+      ],
+      "height_semantic": 2.3
+    },
+    {
+      "name": "lateral_service_box_755_opposite",
+      "material": "machinery",
+      "polygon_source": [
+        [
+          739,
+          729
+        ],
+        [
+          773,
+          729
+        ],
+        [
+          773,
+          672
+        ],
+        [
+          739,
+          672
+        ]
+      ],
+      "height_semantic": 2.3
+    },
+    {
+      "name": "lateral_service_box_814",
+      "material": "machinery",
+      "polygon_source": [
+        [
+          798,
+          337
+        ],
+        [
+          832,
+          337
+        ],
+        [
+          832,
+          394
+        ],
+        [
+          798,
+          394
+        ]
+      ],
+      "height_semantic": 2.3
+    },
+    {
+      "name": "lateral_service_box_814_opposite",
+      "material": "machinery",
+      "polygon_source": [
+        [
+          798,
+          729
+        ],
+        [
+          832,
+          729
+        ],
+        [
+          832,
+          672
+        ],
+        [
+          798,
+          672
+        ]
+      ],
+      "height_semantic": 2.3
+    },
+    {
+      "name": "lateral_service_box_1130",
+      "material": "machinery",
+      "polygon_source": [
+        [
+          1114,
+          337
+        ],
+        [
+          1148,
+          337
+        ],
+        [
+          1148,
+          394
+        ],
+        [
+          1114,
+          394
+        ]
+      ],
+      "height_semantic": 2.3
+    },
+    {
+      "name": "lateral_service_box_1130_opposite",
+      "material": "machinery",
+      "polygon_source": [
+        [
+          1114,
+          729
+        ],
+        [
+          1148,
+          729
+        ],
+        [
+          1148,
+          672
+        ],
+        [
+          1114,
+          672
+        ]
+      ],
+      "height_semantic": 2.3
+    },
+    {
+      "name": "lateral_service_box_1184",
+      "material": "machinery",
+      "polygon_source": [
+        [
+          1168,
+          337
+        ],
+        [
+          1202,
+          337
+        ],
+        [
+          1202,
+          394
+        ],
+        [
+          1168,
+          394
+        ]
+      ],
+      "height_semantic": 2.3
+    },
+    {
+      "name": "lateral_service_box_1184_opposite",
+      "material": "machinery",
+      "polygon_source": [
+        [
+          1168,
+          729
+        ],
+        [
+          1202,
+          729
+        ],
+        [
+          1202,
+          672
+        ],
+        [
+          1168,
+          672
+        ]
+      ],
+      "height_semantic": 2.3
+    }
+  ],
+  "circles": [
+    {
+      "name": "rear_circular_assembly",
+      "source_center": [
+        1766,
+        533
+      ],
+      "source_radius": 84,
+      "material": "framing"
+    },
+    {
+      "name": "forward_circular_assembly",
+      "source_center": [
+        561,
+        533
+      ],
+      "source_radius": 29,
+      "material": "framing"
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "bow",
+      "source": [
+        2,
+        533
+      ],
+      "canonical": [
+        181.843808630394,
+        16.28163165608207
+      ],
+      "type": "bow",
+      "uncertain": true,
+      "uncertainty_final_px": 2
+    },
+    {
+      "id": "left_forward_shoulder",
+      "source": [
+        510,
+        776
+      ],
+      "canonical": [
+        105.93480300187618,
+        175.10918417195896
+      ],
+      "type": "structure",
+      "uncertain": true,
+      "uncertainty_final_px": 2
+    },
+    {
+      "id": "right_forward_shoulder",
+      "source": [
+        510,
+        290
+      ],
+      "canonical": [
+        257.7528142589118,
+        175.10918417195896
+      ],
+      "type": "structure",
+      "uncertain": true,
+      "uncertainty_final_px": 2
+    },
+    {
+      "id": "forward_weapon_pivot",
+      "source": [
+        170,
+        533
+      ],
+      "canonical": [
+        181.843808630394,
+        68.80727894479726
+      ],
+      "type": "weapon",
+      "uncertain": true,
+      "uncertainty_final_px": 2
+    },
+    {
+      "id": "center_deck",
+      "source": [
+        820,
+        533
+      ],
+      "canonical": [
+        181.843808630394,
+        272.03150952613584
+      ],
+      "type": "structure",
+      "uncertain": true,
+      "uncertainty_final_px": 2
+    },
+    {
+      "id": "rear_ring",
+      "source": [
+        1766,
+        533
+      ],
+      "canonical": [
+        181.843808630394,
+        567.8009281875916
+      ],
+      "type": "circle",
+      "uncertain": true,
+      "uncertainty_final_px": 2
+    },
+    {
+      "id": "small_engine_left",
+      "source": [
+        924,
+        845
+      ],
+      "canonical": [
+        84.38039399624765,
+        304.54738641915
+      ],
+      "type": "engine",
+      "uncertain": true,
+      "uncertainty_final_px": 2
+    },
+    {
+      "id": "small_engine_right",
+      "source": [
+        924,
+        221
+      ],
+      "canonical": [
+        279.3072232645403,
+        304.54738641915
+      ],
+      "type": "engine",
+      "uncertain": true,
+      "uncertainty_final_px": 2
+    },
+    {
+      "id": "large_engine_left",
+      "source": [
+        1710,
+        1012
+      ],
+      "canonical": [
+        32.2124765478424,
+        550.2923790913532
+      ],
+      "type": "engine",
+      "uncertain": true,
+      "uncertainty_final_px": 2
+    },
+    {
+      "id": "large_engine_right",
+      "source": [
+        1710,
+        54
+      ],
+      "canonical": [
+        331.4751407129456,
+        550.2923790913532
+      ],
+      "type": "engine",
+      "uncertain": true,
+      "uncertainty_final_px": 2
+    },
+    {
+      "id": "aft_weapon_left",
+      "source": [
+        1870,
+        615
+      ],
+      "canonical": [
+        156.22842401500938,
+        600.3168050806057
+      ],
+      "type": "weapon",
+      "uncertain": true,
+      "uncertainty_final_px": 2
+    },
+    {
+      "id": "aft_weapon_right",
+      "source": [
+        1870,
+        451
+      ],
+      "canonical": [
+        207.4591932457786,
+        600.3168050806057
+      ],
+      "type": "weapon",
+      "uncertain": true,
+      "uncertainty_final_px": 2
+    },
+    {
+      "id": "aft_outer_weapon_left",
+      "source": [
+        1170,
+        866
+      ],
+      "canonical": [
+        77.8203564727955,
+        381.4599413776258
+      ],
+      "type": "weapon",
+      "uncertain": true,
+      "uncertainty_final_px": 2
+    },
+    {
+      "id": "aft_outer_weapon_right",
+      "source": [
+        1170,
+        198
+      ],
+      "canonical": [
+        286.49202626641653,
+        381.4599413776258
+      ],
+      "type": "weapon",
+      "uncertain": true,
+      "uncertainty_final_px": 2
+    }
+  ],
+  "openings": [
+    {
+      "name": "aft_opening_left",
+      "source": [
+        1565,
+        745
+      ],
+      "canonical": [
+        115.6186679174484,
+        504.95774303859304
+      ]
+    },
+    {
+      "name": "aft_opening_right",
+      "source": [
+        1565,
+        321
+      ],
+      "canonical": [
+        248.0689493433396,
+        504.95774303859304
+      ]
+    },
+    {
+      "name": "small_aft_gap_left",
+      "source": [
+        1280,
+        804
+      ],
+      "canonical": [
+        97.18808630393997,
+        415.8517342452369
+      ]
+    },
+    {
+      "name": "small_aft_gap_right",
+      "source": [
+        1280,
+        262
+      ],
+      "canonical": [
+        266.49953095684805,
+        415.8517342452369
+      ]
+    }
+  ],
+  "component_counts": {
+    "small_forward_engine_pods": 2,
+    "large_aft_engine_pods": 2,
+    "prominent_rear_ring": 1
+  },
+  "assembly_policy": "complete assembled ship; visible turrets retained; no functional weapons added in export"
+}

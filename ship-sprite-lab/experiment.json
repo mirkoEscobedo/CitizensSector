@@ -1,0 +1,16 @@
+{
+  "ship": "idris",
+  "hull_long_px": 640,
+  "margin_px": 16,
+  "max_parallel_expensive_jobs": 1,
+  "initial_effort_budget_minutes": {"M0": 10, "M1": 10, "M2": 4, "M3": 5, "M4": 12, "M5": 8},
+  "max_first_candidates": 1,
+  "max_focused_revisions": 2,
+  "M4_max_focused_revisions": 1,
+  "budget_scope": "agent active implementation effort, excluding provider latency, comparison/reporting and shared setup; not measured human labor",
+  "game_install": "H:/Games/Starsector",
+  "blender_executable": null,
+  "second_ship": null,
+  "thresholds": {"mask_iou_min": 0.985, "landmark_error_final_px_max": 3, "manual_annotation_uncertainty_px": 2, "interior_opaque_fraction_min": 0.98, "opening_alpha_max": 8, "outer_margin_min_px": 14},
+  "scale_note": "640 hull pixels is an experimental default; game draw dimensions not approved; no metres/pixel inferred"
+}

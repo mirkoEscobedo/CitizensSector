@@ -1,0 +1,35 @@
+{
+  "source": "docs/references/starcitizen_og_model/ChatGPT Image Oct 20, 2026, 12_12_14 PM.png",
+  "source_sha256": "444094baa2a3cea146347a900cea3c25c061c02143dfb3a5103e3829ff1f315e",
+  "source_dimensions": [
+    2047,
+    1066
+  ],
+  "rotation": "clockwise 90 degrees, no reflection",
+  "rotated_crop_bbox": [
+    0,
+    0,
+    1066,
+    2047
+  ],
+  "output_dimensions": [
+    365,
+    672
+  ],
+  "hull_dimensions": [
+    333,
+    640
+  ],
+  "source_to_rotated_pixel_center": [
+    [
+      "x_rot",
+      "1065-y"
+    ],
+    [
+      "y_rot",
+      "x"
+    ]
+  ],
+  "rotated_to_canonical_pixel_center": "((p-crop_min+0.5)*scale)-0.5+16; scale=(rounded_width/crop_width,640/crop_height)",
+  "interpretation": "complete assembled ship, existing turrets retained; not hull-only"
+}

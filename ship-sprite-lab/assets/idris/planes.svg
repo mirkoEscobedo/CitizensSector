@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="365" height="672" viewBox="0 0 365 672">
+<defs><mask id="hull"><image href="canonical-mask.png" width="365" height="672"/></mask><linearGradient id="plane" x2="1" y2="1"><stop stop-color="#d8e0e4"/><stop offset="1" stop-color="#535f6b"/></linearGradient></defs>
+<g mask="url(#hull)"><rect width="365" height="672" fill="#303740"/>
+<polygon id="forward_shoulder" points="195.28,46.92 259.31,171.98 260.25,221.07 246.51,223.26 199.96,195.43 194.96,140.09" fill="#677c96" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="forward_shoulder_opposite" points="168.41,46.92 104.37,171.98 103.44,221.07 117.18,223.26 163.73,195.43 168.72,140.09" fill="#677c96" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="shoulder_lit_plate" points="202.15,71.93 254.94,176.99 245.57,196.06 198.40,144.16" fill="#b4b1a2" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="shoulder_lit_plate_opposite" points="161.54,71.93 108.75,176.99 118.12,196.06 165.29,144.16" fill="#b4b1a2" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="forward_center_spine" points="188.40,31.29 193.71,71.93 194.03,193.24 199.96,207.63 195.90,213.88 167.47,213.88 163.73,207.63 169.04,193.24 169.97,71.93 176.53,31.29" fill="#b4b1a2" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="lateral_deck" points="246.82,225.13 260.56,245.46 260.56,318.62 249.32,318.30 249.01,419.60 210.90,437.74 210.90,223.57" fill="#677c96" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="lateral_deck_opposite" points="116.87,225.13 103.12,245.46 103.12,318.62 114.37,318.30 114.68,419.60 152.79,437.74 152.79,223.57" fill="#677c96" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="lateral_plate" points="241.82,237.95 245.88,282.04 244.63,346.44 235.26,359.57 221.52,353.32 221.52,231.39" fill="#b4b1a2" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="lateral_plate_opposite" points="121.87,237.95 117.81,282.04 119.05,346.44 128.43,359.57 142.17,353.32 142.17,231.39" fill="#b4b1a2" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="main_deck" points="203.40,213.88 203.40,384.90 194.65,411.16 169.35,416.16 159.98,384.59 159.98,213.88" fill="#b4b1a2" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="center_raised_deck" points="189.03,231.70 190.90,293.29 185.90,303.61 177.16,303.61 172.47,293.29 174.66,231.70" fill="#71808b" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="aft_inner_bed" points="272.43,428.36 270.87,519.03 221.20,540.91 208.08,504.96 218.08,444.30" fill="#3c424a" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="aft_inner_bed_opposite" points="91.25,428.36 92.81,519.03 142.48,540.91 155.60,504.96 145.61,444.30" fill="#3c424a" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="aft_outer_frame" points="302.74,358.95 315.23,393.97 312.11,534.35 286.18,544.66 249.32,562.80 237.76,578.43 218.70,622.20 202.15,614.39 221.20,550.29 249.32,531.53 291.80,514.34 291.80,399.28 277.43,378.96 280.56,367.08" fill="#677c96" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="aft_outer_frame_opposite" points="60.95,358.95 48.46,393.97 51.58,534.35 77.51,544.66 114.37,562.80 125.93,578.43 144.98,622.20 161.54,614.39 142.48,550.29 114.37,531.53 71.89,514.34 71.89,399.28 86.25,378.96 83.13,367.08" fill="#677c96" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="aft_cross_brace" points="278.68,412.73 277.43,425.23 214.64,454.00 207.15,446.49 207.77,436.80 235.26,428.36" fill="#71808b" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="aft_cross_brace_opposite" points="85.01,412.73 86.25,425.23 149.04,454.00 156.54,446.49 155.92,436.80 128.43,428.36" fill="#71808b" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="stern_assembly_base" points="220.58,541.54 232.14,578.12 217.77,625.33 197.78,645.34 181.53,650.34 164.66,645.34 145.30,625.33 131.55,578.12 143.11,541.54" fill="#677c96" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="aft_center_spear" points="182.78,393.97 191.53,407.41 191.84,431.48 186.22,512.77 181.22,520.59 175.60,512.77 171.54,431.48 171.85,407.41" fill="#b4b1a2" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="forward_pod" points="284.62,206.37 288.99,220.44 288.99,294.86 284.31,304.86 276.18,307.05 271.19,298.61 270.87,218.88 275.56,206.37" fill="#677c96" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="forward_pod_opposite" points="79.07,206.37 74.70,220.44 74.70,294.86 79.38,304.86 87.50,307.05 92.50,298.61 92.81,218.88 88.13,206.37" fill="#677c96" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="aft_pod" points="336.16,438.68 341.78,447.43 342.41,516.53 340.53,540.91 333.04,549.98 326.16,549.98 320.85,534.97 321.79,447.43 326.79,438.68" fill="#677c96" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="aft_pod_opposite" points="27.53,438.68 21.90,447.43 21.28,516.53 23.15,540.91 30.65,549.98 37.52,549.98 42.83,534.97 41.90,447.43 36.90,438.68" fill="#677c96" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="lateral_service_box_755" points="243.07,246.71 243.07,257.34 225.27,257.34 225.27,246.71" fill="#3c424a" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="lateral_service_box_755_opposite" points="120.62,246.71 120.62,257.34 138.42,257.34 138.42,246.71" fill="#3c424a" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="lateral_service_box_814" points="243.07,265.15 243.07,275.78 225.27,275.78 225.27,265.15" fill="#3c424a" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="lateral_service_box_814_opposite" points="120.62,265.15 120.62,275.78 138.42,275.78 138.42,265.15" fill="#3c424a" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="lateral_service_box_1130" points="243.07,363.95 243.07,374.58 225.27,374.58 225.27,363.95" fill="#3c424a" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="lateral_service_box_1130_opposite" points="120.62,363.95 120.62,374.58 138.42,374.58 138.42,363.95" fill="#3c424a" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="lateral_service_box_1184" points="243.07,380.83 243.07,391.46 225.27,391.46 225.27,380.83" fill="#3c424a" stroke="#9ca8b2" stroke-width="0.6"/>
+<polygon id="lateral_service_box_1184_opposite" points="120.62,380.83 120.62,391.46 138.42,391.46 138.42,380.83" fill="#3c424a" stroke="#9ca8b2" stroke-width="0.6"/>
+<circle cx="181.843808630394" cy="567.8009281875916" r="26.262823644357596" fill="#687984" stroke="#b6c0c6" stroke-width="1.2"/>
+<circle cx="181.843808630394" cy="191.05446995603322" r="9.066927210552027" fill="#687984" stroke="#b6c0c6" stroke-width="1.2"/>
+</g></svg>

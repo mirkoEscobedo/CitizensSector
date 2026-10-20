@@ -1,0 +1,267 @@
+[
+  {
+    "source": "docs/references/bychatgpt/Idris top-down starship study-1.png",
+    "source_sha256": "53436e629fd6cf3c5ca342cc1387ded95ee2828aaef4ddd95f9bc54fb74f6e2a",
+    "bow_original": "up",
+    "mirrored": false,
+    "rotated_alpha_crop": [
+      0,
+      0,
+      1016,
+      1536
+    ],
+    "own_output_dimensions": [
+      455,
+      672
+    ],
+    "source_to_own_output_affine_pixel_centers": [
+      [
+        0.41633858267716534,
+        0.0,
+        15.708169291338583
+      ],
+      [
+        0.0,
+        0.4166666666666667,
+        15.708333333333334
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_to_centered_canonical_frame_affine": [
+      [
+        0.41633858267716534,
+        0.0,
+        -29.291830708661415
+      ],
+      [
+        0.0,
+        0.4166666666666667,
+        15.708333333333334
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "registration_scope": "long-edge/center registration only; independent designs are not warped into geometric agreement",
+    "uncertainty": "prior generated alpha bounds include unwanted background; own normalization is diagnostic only"
+  },
+  {
+    "source": "docs/references/bychatgpt/Top-down spaceship transparent cutout-2.png",
+    "source_sha256": "18b067e0f2c628861aa029037ec8933053c47fb5030366b1ec30d4ce3a2bc9c6",
+    "bow_original": "up",
+    "mirrored": false,
+    "rotated_alpha_crop": [
+      0,
+      0,
+      1014,
+      1536
+    ],
+    "own_output_dimensions": [
+      454,
+      672
+    ],
+    "source_to_own_output_affine_pixel_centers": [
+      [
+        0.4161735700197239,
+        0.0,
+        15.708086785009861
+      ],
+      [
+        0.0,
+        0.4166666666666667,
+        15.708333333333334
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_to_centered_canonical_frame_affine": [
+      [
+        0.4161735700197239,
+        0.0,
+        -28.79191321499014
+      ],
+      [
+        0.0,
+        0.4166666666666667,
+        15.708333333333334
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "registration_scope": "long-edge/center registration only; independent designs are not warped into geometric agreement",
+    "uncertainty": "prior generated alpha bounds include unwanted background; own normalization is diagnostic only"
+  },
+  {
+    "source": "docs/references/fanmadepixelart/ChatGPT Image Oct 20, 2026, 12_12_44 PM.png",
+    "source_sha256": "93ca2a14b89b2f71f7ac1f5e41f89fd8de4d0666611aa73f0bb6c5e8e83ff740",
+    "bow_original": "right",
+    "mirrored": false,
+    "rotated_alpha_crop": [
+      2,
+      0,
+      574,
+      1080
+    ],
+    "own_output_dimensions": [
+      371,
+      672
+    ],
+    "source_to_own_output_affine_pixel_centers": [
+      [
+        0.0,
+        0.5926573426573427,
+        14.611013986013987
+      ],
+      [
+        -0.5925925925925926,
+        0.0,
+        655.2037037037037
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_to_centered_canonical_frame_affine": [
+      [
+        0.0,
+        0.5926573426573427,
+        11.611013986013987
+      ],
+      [
+        -0.5925925925925926,
+        0.0,
+        655.2037037037037
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "registration_scope": "long-edge/center registration only; independent designs are not warped into geometric agreement",
+    "uncertainty": "manual interpretation; no geometric averaging"
+  },
+  {
+    "source": "docs/references/handmadeidrisvsvanillaships.png",
+    "role": "comparison-only flattened lineup; not registered as ship geometry",
+    "transform": null
+  },
+  {
+    "source": "docs/references/mfz_idris_hand_made_by_bro.png",
+    "source_sha256": "4b70623d317bed6569b1f9167f5f78e236f15a9f778070bc3d4f63f212093167",
+    "bow_original": "up",
+    "mirrored": false,
+    "rotated_alpha_crop": [
+      6,
+      5,
+      168,
+      267
+    ],
+    "own_output_dimensions": [
+      428,
+      672
+    ],
+    "source_to_own_output_affine_pixel_centers": [
+      [
+        2.4444444444444446,
+        0.0,
+        2.0555555555555536
+      ],
+      [
+        0.0,
+        2.4427480916030535,
+        4.507633587786259
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_to_centered_canonical_frame_affine": [
+      [
+        2.4444444444444446,
+        0.0,
+        -29.444444444444446
+      ],
+      [
+        0.0,
+        2.4427480916030535,
+        4.507633587786259
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "registration_scope": "long-edge/center registration only; independent designs are not warped into geometric agreement",
+    "uncertainty": "manual interpretation; no geometric averaging"
+  },
+  {
+    "source": "docs/references/starcitizen_og_model/ChatGPT Image Oct 20, 2026, 12_12_14 PM.png",
+    "source_sha256": "444094baa2a3cea146347a900cea3c25c061c02143dfb3a5103e3829ff1f315e",
+    "bow_original": "left",
+    "mirrored": false,
+    "rotated_alpha_crop": [
+      0,
+      0,
+      1066,
+      2047
+    ],
+    "own_output_dimensions": [
+      365,
+      672
+    ],
+    "source_to_own_output_affine_pixel_centers": [
+      [
+        0.0,
+        -0.3123827392120075,
+        348.343808630394
+      ],
+      [
+        0.3126526624328285,
+        0.0,
+        15.656326331216414
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_to_centered_canonical_frame_affine": [
+      [
+        0.0,
+        -0.3123827392120075,
+        348.343808630394
+      ],
+      [
+        0.3126526624328285,
+        0.0,
+        15.656326331216414
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "registration_scope": "authoritative frame",
+    "uncertainty": "manual interpretation; no geometric averaging"
+  }
+]

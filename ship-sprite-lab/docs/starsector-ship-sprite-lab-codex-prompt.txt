@@ -1,0 +1,520 @@
+STARSECTOR SHIP SPRITE LAB
+Codex execution brief — prepared 20 October 2026
+
+Copy this entire brief into a Codex session opened in a new experimental project,
+and provide the three referenced input images. This brief describes work to build
+and run; it is not a claim that the software or its results already exist.
+
+MISSION
+
+Build and execute a small, reproducible ship-art laboratory to determine which
+methods can turn Star Citizen ship references into faithful, attractive Starsector
+ship sprites with little human intervention. Use the supplied Idris as the first
+test. Produce actual candidate images, inspect them, compare results at their
+intended display size, and recommend a production recipe supported by evidence.
+
+This experiment supports a Star Citizen faction mod and later the NearFuture mod.
+The existing NearFuture issue backlog is being developed in parallel. Work in a
+standalone project named ship-sprite-lab, using a separate environment and output
+directory. Read any applicable project instructions. Keep this experiment's
+changes and processes within its own scope. Local commits are useful; external
+publishing, pushes, issue changes, and production integration are outside this
+brief. The first deliverable is a working visual experiment, not just a plan.
+
+The production objective is acceptable ships per human hour, including source
+preparation, correction, retries, and game integration. Images generated per
+minute alone are not an adequate success metric. A plausible fully automated
+route is a hypothesis to test, not a result to assume.
+
+1. INPUTS AND WHAT THEY MEAN
+
+Locate the provided files by their actual names. Do not assume the paths from a
+previous ChatGPT session exist on this computer. Make an input inventory with
+checksums, dimensions, color mode, alpha range, bounding boxes, and source notes.
+Keep source bytes intact and work on derived files.
+
+Supplied inputs:
+
+* image(6).png: 2047 x 1066 RGBA. Gray, shaded top-down Idris reference, bow LEFT.
+  This is the default geometry reference for the first experiment. It is already
+  a useful render-like image; possession of this PNG does not establish that we
+  possess its original mesh, material maps, depth, or normals.
+* image(7).png: 1080 x 575 RGBA. Flatter blue-gray colored/outlined Idris drawing,
+  bow RIGHT. Treat it as an independent interpretation and optional palette or
+  region guide. Its geometry may differ from image(6); do not average the two.
+* image(8).png: 1313 x 312 RGB. Flattened comparison labelled OURS, apogee,
+  starliner, doom, revenant, eagle, and tesseract, with bows UP. The OURS sprite
+  is visibly more developed than image(7). Use this image for comparative visual
+  judgment; its displayed ship sizes do not establish native PNG resolution or
+  actual in-game scaling.
+
+The first two inputs already contain transparency and partially transparent
+antialiased edge pixels. Preserve their alpha. Do not remove all black pixels:
+that would erase dark machinery and other valid foreground. Both source hulls
+reach their canvas edges, so introduce explicit transparent margins in working
+exports.
+
+If available, also ingest the friend's latest standalone finished sprite and its
+editable source, the genuine Idris mesh, texture maps, and a few native vanilla
+sprites from a user-provided Starsector installation. Record exactly what was
+available. An extracted crop of OURS is only a screenshot baseline; label it as
+such and never imply that it is the original sprite asset.
+
+Track the source and reuse/redistribution status of imported material. Keep
+reference material and distributable outputs distinguishable. A visible web
+render or downloadable viewer file is not, by itself, evidence of redistribution
+permission. Work with supplied or appropriately usable sources; no blanket legal
+claim is required to run a private technical experiment.
+
+2. FIRST RUN: CAPABILITIES AND A QUICK BASELINE
+
+Inspect the local environment before choosing commands. Prefer a small Python
+project with explicit dependencies and a Blender Python entry point. Discover
+the installed Blender version, render engines, image-processing libraries, and
+any image-generation tools actually available. Use the installed version's API
+documentation. Do not assume a Blender MCP server or an image API is connected.
+
+Use scoped dependencies and record versions. Default expensive work to one job
+at a time, configurable later. Own and clean up only this project's child
+processes. Support cancellation and actionable error messages. Do not change
+the user's existing local-model serving or ongoing development environment.
+
+Create a baseline output and a small comparison immediately, before investing in
+large infrastructure. Inspect the output image through the available image
+viewer. Record uncertain inputs and use explicit defaults for reversible choices.
+Continue all independent work when a particular dependency is unavailable.
+
+An unavailable mesh or image provider blocks that experimental arm; it does not
+block the whole lab. Report arms as COMPLETE, PARTIAL, BLOCKED, or NOT RUN with
+specific evidence. Never substitute an invented mesh for an imported original
+while keeping the same method label.
+
+3. COMMON ASSET CONTRACT
+
+Establish one canonical, editable geometry specification for the Idris before
+ranking methods. The default is the silhouette and main structure from image(6),
+rotated to bow UP without mirroring. Register alternative references explicitly;
+they have opposite bow directions and may contain genuine design differences.
+
+Store the following in a per-ship manifest:
+
+* Source paths, hashes, source roles, variant/interpretation, and provenance.
+* Canonical orientation, aspect ratio, hull mask, transparent openings, and the
+  complete transform from each source image into the canonical coordinate frame.
+* Named major components and material regions: armor, machinery, recesses,
+  framing, engine pods, center deck, important circular assemblies, and accents.
+* Key structural landmarks, candidate weapon pivots, engine exits, and frame of
+  reference for each point. Mark uncertain points and inferred annotations.
+* Texture dimensions, hull bounding-box dimensions, transparent margin, and
+  intended in-game draw dimensions as separate values.
+* Render settings, palette preset, detail-scale settings, compositing settings,
+  random seeds where supported, tool versions, and chosen output identifier.
+
+Preserve these identifying features from the approved reference:
+
+* The tapered prow and broad forward armor shoulders.
+* The long centerline deck and recognizable large raised assemblies.
+* The aft framing and genuine negative spaces around the central stern structure.
+* The smaller forward-side engine-pod pair and larger aft-side engine-pod pair.
+* The prominent rear circular assembly and major weapon/engine locations.
+
+Specify whether each candidate depicts the complete assembled ship or a hull-only
+game asset. Record intentional removals of separately drawn weapons. Derive the
+hull-only mask and landmark inventory accordingly, and compare the assembled
+hull-plus-weapons presentation against the original full-ship reference. This
+planned separation must not be confused with unintended geometry drift.
+
+Geometric symmetry and lighting symmetry are different. Preserve symmetry where
+present in the design; do not mirror a fully shaded half and accidentally make
+the illumination contradict itself.
+
+For an initial comparison, use a configurable 640-pixel hull long edge, preserving
+the canonical aspect ratio, with a separate transparent margin (for example 16
+pixels). This is an experimental default, not a Starsector requirement or a
+claim about the Idris's physical length. If the available installation and
+reference sprites suggest a better scale, document the adjustment once and
+apply it to every candidate.
+
+Do not normalize by canvas dimensions alone: different margins can make two
+nominally equal PNGs display different hull sizes. Do not infer physical metres
+per pixel or a universal power-of-two texture requirement. In-game scaling must
+be checked against the actual game data used by the test installation.
+
+4. ART DIRECTION TO TEST
+
+Aim for full-color raster spaceship art with convincing relief and legibility at
+small display sizes. The target is not an arbitrary limited-palette retro effect.
+Choose two or three relevant vanilla reference ships as the main style cohort.
+Use the entire supplied lineup as a secondary check. A clean Tesseract and a busy
+Doom demonstrate different treatments; do not blindly mix every texture style.
+
+Work at three scales:
+
+* Large: recognizable silhouette and broad light/dark armor masses.
+* Medium: plate hierarchy, exposed structure, raised decks, recesses, engine
+  assemblies, and major mechanical forms.
+* Fine: selected vents, seams, fasteners, wear, and surface texture.
+
+Prioritize large and medium forms. Keep some armor areas quiet so mechanical
+clusters remain distinct. Use consistent lit planes, narrow bevel highlights,
+darker side faces, and controlled contact shadows. Avoid uniformly outlining
+every plate, sharpening every edge, or filling every surface with random detail.
+
+Initial material families may include subdued blue-gray painted armor, warm pale
+gray plates, dark gunmetal machinery, and a small restrained accent. Treat these
+as tunable art direction informed by the supplied references, not a mandatory
+new faction identity. Distinguish materials through value and roughness as well
+as color. Preserve design identity when changing surface treatment.
+
+Calibrate a lighting rig against the selected reference cohort, then save it as
+a faction preset. An upper/front-side key with restrained fill is a starting
+experiment, not a universal Starsector lighting rule. Keep projected perspective,
+dramatic atmospheric effects, and cinematic bloom out of the hull-art benchmark.
+
+5. EXPERIMENTAL ARMS
+
+Build thin implementations that produce real images. Give each available method
+one first candidate and up to two focused revisions. Record actual setup and
+revision effort; equal candidate counts do not imply equal labor. Change one
+major cause of a defect at a time. Avoid a large factorial search before learning
+which factors matter.
+
+Set and report a configurable initial implementation-effort budget per arm before
+building it, choosing a reasonable default for this environment. Produce a coarse
+but inspectable result early. If an arm exhausts its budget, retain its best
+current output, mark it PARTIAL, and report remaining work rather than extending
+the initial experiment indefinitely. Count reusable setup and ship-specific
+modeling separately. This is an experiment budget, not a reason to discard
+finished renders or terminate unrelated development processes.
+
+M0 — Existing-image baseline and restrained 2D finish
+
+Normalize and export the supplied gray render and flat illustration as separate
+baseline candidates. Include the latest finished sprite when available. Test a
+modest masked material/value treatment of the gray input, keeping its geometry.
+Keep the untreated baseline available. This establishes how much useful relief
+already exists before reconstructing anything. A flattened image cannot provide
+physically correct relighting or recover obscured geometry.
+
+M1 — Programmatic 2D / SVG-assisted raster
+
+Construct an editable hierarchy of silhouette, plates, mechanical regions, and
+landmarks using vector paths or layered raster masks. Render meaningful plane
+shading and bevels, with reusable small components and controlled material
+texture. Export to the same RGBA PNG contract. SVG is an authoring intermediate;
+its scaling ability does not create convincing shading by itself.
+
+Retain the editable source and parameters. Do not present a whole-sprite color
+filter or randomly placed rectangles as successful structural reconstruction.
+Record the human/agent effort needed to specify regions for this particular hull.
+
+M2 — Genuine mesh to orthographic sprite
+
+Run this arm only when a genuine usable source model is available. Inspect axes,
+units, disconnected objects, unnecessary interiors, duplicate components,
+normals, materials, and source textures. Render from a perpendicular orthographic
+camera, with bow direction explicit. Disable perspective, depth of field, motion
+blur, floor geometry, and background shadows in the export rig.
+
+Use a saved material/light preset and transparent film. Save the scene and the
+script needed to reproduce it. Render beauty and alpha, and useful available
+passes such as depth, normals, ambient occlusion, and material/object masks.
+Document pass support for the actual engine; do not assume identical EEVEE and
+Cycles behavior. Material/object masks or Cryptomatte can isolate regions for
+compositing. Extra passes are working data unless the chosen game workflow
+explicitly uses them.
+
+Inspect final-size visibility of bevels, grooves, and important machinery.
+Simplify or exaggerate selected details when necessary for readability while
+preserving identity. Record such adaptations; a source mesh rendered unchanged
+is not automatically a finished Starsector sprite.
+
+M3 — Shallow 2.5D reconstruction from a top view
+
+Use the canonical silhouette and component hierarchy to build a shallow model:
+stacked/extruded plates, restrained bevels, raised deck pieces, cutouts, engine
+pods, and repeated mechanical components. Concentrate on geometry visible from
+the intended camera and geometry needed to cast useful local shadows.
+
+This is a new, approximate reconstruction. Label it accurately. Do not infer
+height by treating grayscale brightness as depth: painted color and illumination
+are mixed into the source image. Model semantic layers explicitly. If a learned
+depth estimate is evaluated, treat it as a separate uncertain input and inspect
+it against known structure.
+
+Use the same render rig, material presets, scale, and output checks as M2. Track
+ship-specific annotation/reconstruction effort separately from reusable setup.
+
+M4 — Reference-guided image generation
+
+Use an actual available image-generation/editing tool. If none is available,
+provide the adapter contract and reproducible prompt inputs, mark the arm
+BLOCKED, and execute the remaining methods. Do not claim ordinary text/code
+generation itself performed an image-model run.
+
+Assign reference roles: one authoritative geometry target, optional color guide,
+and a small style cohort. Save the complete prompt, provider/model identifier
+when returned, input hashes, settings, outputs, attempts, and cost if known.
+Store returned outputs so the downstream pipeline is reproducible even when the
+provider cannot replay the identical image. Do not invent seed determinism or
+cost numbers. Use existing authorized tools within a bounded candidate budget.
+
+Require an orthographic view, the approved proportions, preserved openings and
+components, and clean transparency. Start with material/lighting treatment of
+existing structure. Where supported, use masks and low-strength image editing
+or geometry conditioning. Do not assume those controls exist in every tool.
+
+Inspect every candidate for moved mounts, invented components, altered pods,
+changed cutouts, perspective drift, baked glow, and semitransparent hull areas.
+Passing a silhouette check alone does not prove that interior geometry survived.
+Attractive candidates with structural failures are valid style studies but fail
+the production-asset acceptance gate.
+
+M5 — Controlled hybrid
+
+After the first results, run a single clearly defined combination that addresses
+a demonstrated weakness in the strongest geometry-controlled method. Examples:
+masked surface treatment of a Blender render, or programmatic material finishing
+of a supplied render. State exactly which stage is generative.
+
+Retain authoritative structural layers and approved masks. Constrain generative
+surface treatment to appropriate regions where possible. Reapplying the original
+outer alpha only fixes the outer silhouette; it does not undo internal geometry
+drift. Validate both the raw generated result and the finished composite, and
+preserve both. If the hybrid takes more correction than its base method, report
+that result rather than assuming a hybrid must win.
+
+6. RESOLUTION AND COLOR EXPERIMENT
+
+For the one or two leading deterministic methods, compare native-size production
+with 2x and 4x source/render resolution, all reduced to the SAME final hull dimensions.
+Keep geometry, material parameters, camera, and intended display scale fixed.
+For repeated components, define feature size in final-output pixels so that
+supersampling does not silently change the intended detail scale.
+
+For image-generation arms, record requested and returned resolution and the
+provider's actual controls. Enlarging an existing generated image is not a new
+higher-resolution render. Regenerating at another size may change the content;
+label that confounding change instead of presenting it as a controlled
+supersampling comparison.
+
+Compare a sensible area/bicubic reduction with one sharper filter if it resolves
+a visible uncertainty. Keep sharpening modest and check for ringing. Do not make
+nearest-neighbor reduction the default for painted or rendered art. Use nearest
+neighbor for diagnostic enlargement when the actual pixel structure should be
+visible.
+
+Use alpha-aware resizing. For custom filtering, account for linear-light color,
+premultiplied RGB and alpha during filtering, and safe conversion back to the
+intended straight-alpha output. Verify what the library already handles so alpha
+is not multiplied twice. Preserve narrow antialiased edges and genuine openings.
+
+Record color space, view transform, exposure, look, and export settings. Do not
+silently accept an installed Blender default that changes between versions. Test
+the exported PNGs: neither a photographic view transform nor Standard should
+be declared universally best without looking at the intended sprite palette.
+
+Check whether small grooves and highlights survive reduction. A 2-pixel-wide
+feature in a 4x source becomes only half a final pixel; higher source resolution
+cannot make all such features remain independently visible. Adjust or simplify
+the design where needed, then assess the final-size result again.
+
+7. REVIEW AND TECHNICAL GATES
+
+Generate a simple local comparison report and PNG contact sheets. A lightweight
+static report is sufficient; invest effort in the candidates and comparisons.
+Use neutral candidate IDs for the visual review and show method metadata in a
+separate key to reduce method-preference bias.
+
+Each candidate must appear:
+
+* At its actual target output size, beside the selected style references.
+* At smaller representative combat display sizes, such as 50% and 25% of the
+  target preview, labelled as display tests rather than verified game zooms.
+* At an enlarged nearest-neighbor view for pixel and alpha diagnosis.
+* In grayscale and silhouette-only diagnostic views.
+* On dark space-like, mid-gray, light, and checkerboard backgrounds.
+
+Ensure that browser/device-pixel scaling does not masquerade as native-size
+inspection. Supply exact PNGs, labelled dimensions, and documented zoom settings.
+For style comparison, equalize candidates' hull size. For actual game-scale
+comparison, use verified draw dimensions and preserve relative class sizes.
+When only the flattened comparison screenshot is available, make the style
+comparison no larger than its usable ship pixels (roughly 250 pixels tall in this
+input), reducing candidates to match. Inspect the 640-pixel candidates separately.
+Do not enlarge the screenshot and then judge its interpolation blur as a defect
+in the native vanilla art. Replace screenshot references with original sprites
+when they become available.
+
+Technical checks should cover dimensions, clipping, margins, alpha, aspect ratio,
+orientation, empty aft openings, approved silhouette overlap, component counts,
+and named landmark deviations. Define thresholds and uncertainty before ranking
+results, using sensible final-pixel tolerances. Inspect edge overlays. Score
+source fidelity before any postprocess that forces the reference mask, then
+score the finished output too. Otherwise clipping can hide a failed generation.
+
+Add only meaningful automated tests: coordinate transform round trips, landmark
+projection, preservation of a small known transparent opening, alpha-aware edge
+behavior on contrasting backgrounds, and required export fields are appropriate.
+Do not use edge density, entropy, contrast, or sharpness as a beauty score.
+Noise can increase all of them.
+
+Rate these visual criteria separately on an explained 1–5 scale:
+
+* Recognizability and fidelity of the approved Idris interpretation.
+* Readability of large and medium forms at the intended size.
+* Convincing depth and lighting.
+* Distinct armor, machinery, and framing materials.
+* Fit with the chosen Starsector reference cohort.
+* Restraint and consistency of fine detail.
+
+Keep structural pass/fail separate from aesthetic ratings; an average must not
+override a failed geometry or alpha gate. Describe strengths and defects in
+plain language and cite the actual output files reviewed. Automated or agent
+visual ratings are provisional. Distinguish them from ratings actually supplied
+by the two developers. Human art direction can be a short approval/correction
+stage rather than redrawing an entire hull.
+
+For each arm, record reusable setup time, per-ship preparation, rendering time,
+agent iterations, actual human input/cleanup time, provider cost if known, and
+integration corrections. Use UNKNOWN or NOT MEASURED where necessary. Do not
+present estimated human labor as measured labor.
+
+8. STARSECTOR LOAD TEST
+
+The hull image is one part of the deliverable. Use a supplied game installation
+and known-working example files to verify the actual schema and coordinate
+conventions. Keep these roles distinct:
+
+* Hull texture and any static/decorative fixtures.
+* Separately drawn functional weapon artwork and mount pivots.
+* Engine positions and exhaust effects.
+* Center/origin, draw dimensions, shield/collision data, and hull/variant data.
+
+Do not bake a turret into the hull and also place a separately rendered weapon
+on top of it. Identify turrets already visible in the input and decide how to
+handle them for the test package. Preserve necessary static mounting structures.
+Do not bake a presentation glow or running engine plume into the ordinary hull
+sprite unless an explicit game effect requires it.
+
+Produce a debug overlay and a single explicit transform from source annotations
+through the canonical image into game coordinates. Test at least a bow point,
+left/right pair, weapon pivot, and engine position so rotation, handedness, and
+vertical-origin mistakes become visible. Inspect actual source data rather than
+guessing x/y conventions. Generate collision suggestions conservatively and
+verify supported shapes; image holes are not automatically collision holes.
+
+If the game is available, create an isolated local test mod using placeholder
+development stats and a simple test scenario. Check loading, scale, weapon
+alignment/layering, engine alignment, rotation, zoom, and hull readability under
+normal effects. Capture the evidence. A local browser comparison is useful but
+does not establish in-game compatibility.
+
+If the installation or interactive game is unavailable, deliver the export
+scaffold and exact smoke-test instructions; mark the actual load test NOT RUN.
+Never imply that file validation equals having launched Starsector.
+
+9. REPEATABILITY TEST AND PRODUCTION DECISION
+
+After selecting a leading recipe for Idris, apply it to one substantially
+different ship using an available authorized input: preferably different hull
+proportions and structure, not merely a recolor or an Idris variant. Keep the
+shared preset fixed; record required per-ship annotations and exceptions.
+
+If no second ship is available, finish all Idris work and provide the exact input
+request and test procedure. Mark fleet generalization UNTESTED. A synthetic
+geometry fixture may test software but does not count as a successful second
+Star Citizen conversion.
+
+Report whether the evidence supports:
+
+* A reusable nearly automatic recipe for this input type.
+* A repeatable recipe with bounded human annotation and cleanup.
+* An art-direction aid whose current correction cost makes bulk use impractical.
+
+Allow different input categories to have different best methods. A fleet can
+route real meshes through M2 and image-only ships through M0/M3 without forcing
+one tool to solve every source condition. Count acquisition and preparation
+costs in that decision.
+
+Only after useful images and the repeatability check should you generalize batch
+orchestration. A useful thin command interface would cover environment checks,
+one-ship runs, comparisons, validation, and export. For example, implement and
+document equivalents of:
+
+  python -m sprite_lab doctor
+  python -m sprite_lab run --ship idris --methods available
+  python -m sprite_lab compare --ship idris
+  python -m sprite_lab validate --ship idris
+  python -m sprite_lab export --ship idris --candidate <reviewed-id>
+
+These are requested interfaces, not pre-existing commands. Provide working
+Windows PowerShell instructions and a portable CLI. Cache expensive results;
+store manifests and presets in version control. Retain source scenes and scripts
+so changing faction colors or light strength does not require redrawing ships.
+Record the environment needed for reproduction; do not promise byte-identical
+GPU renders across different hardware or nondeterministic image providers.
+
+10. REQUIRED DELIVERABLES
+
+1. Runnable source, scoped dependency setup, capability report, and concise README.
+2. Input inventory, source-role notes, canonical mask/landmarks, per-ship manifest,
+   and an editable faction material/light preset.
+3. Actual candidate PNGs for every completed method, with raw intermediate outputs
+   retained where needed to understand a generative or compositing result.
+4. Editable source assets for completed routes: layered/vector definitions,
+   Blender scene and reproducible scripts, and/or full image-generation records.
+5. A comparison report and labelled contact sheets at controlled display sizes.
+6. Technical validation results, provisional visual ratings, observed defects,
+   measured effort/cost records, and missing evidence explicitly identified.
+7. The leading candidate's game-export package or clearly labelled scaffold,
+   with actual load-test evidence or a NOT RUN status and test instructions.
+8. The second-ship result or an explicit UNTESTED generalization status.
+9. A recommendation naming the winning method for the tested input category,
+   what still requires human decisions, what failed, and what can now be batched.
+
+Continue until the accessible experimental arms have actual reviewed outputs and
+the evidence above is recorded, or have a specific BLOCKED/PARTIAL status under
+the declared experiment budget. Do not end after dependency setup, placeholders,
+or a proposed plan. Ask only for missing inputs that truly block the remaining
+work, after completing all independent useful work. Do not call any candidate
+production-ready before its structural, alpha, and game-integration status are
+clear. An honest negative result is more useful than a falsely successful lab.
+
+PRIMARY READING AND EVIDENCE
+
+Use the artist's articles to understand the target, and current installed-tool
+documentation for implementation details. The articles are historical descriptions
+of specific workflows, not proof that every later vanilla sprite used them.
+
+* David Baumgart, Let Me Draw You A Starsector Ship, Part 1 (2014):
+  https://fractalsoftworks.com/2014/05/16/let-me-draw-you-a-starsector-ship/
+* David Baumgart, Let Me Draw You A Starsector Ship, Part 2 (2014):
+  https://fractalsoftworks.com/2014/05/22/let-me-draw-you-a-starsector-ship-part-2/
+  Documents direct raster painting, small brushes, and native-size inspection.
+* David Baumgart, Ships & Stories (2013), official monthly archive:
+  https://fractalsoftworks.com/2013/12/
+  Discusses readability, overall form, and reducing excessive fine surface noise.
+* Michael Zahniser, Designing ship sprites (Endless Sky, 2016):
+  https://endless-sky.github.io/2016/09/08/designing-ship-sprites.html
+  A separate game's documented Blender-to-sprite and image-finishing workflow.
+  Its game-specific sizing conventions must not be copied as Starsector rules.
+* How to turn 3D models into sprites, original Starsector practitioner tutorial:
+  https://fractalsoftworks.com/forum/index.php?topic=7469.0
+  Historical evidence that a 3D-to-sprite workflow is already used by modders.
+* Blender Manual, cameras:
+  https://docs.blender.org/manual/en/latest/render/cameras.html
+* Blender Manual, render passes:
+  https://docs.blender.org/manual/en/latest/render/layers/passes.html
+* Blender Manual, command-line rendering:
+  https://docs.blender.org/manual/en/latest/advanced/command_line/render.html
+* ImageMagick, resizing and resampling:
+  https://usage.imagemagick.org/resize/
+* Ontheheavens/Ship-Editor source:
+  https://github.com/Ontheheavens/Ship-Editor
+  A readable reference for hull/weapon/engine data separation. Verify current
+  compatibility before using an old editor binary; this is not a claim that it
+  is the current maintained recommendation.
+
+BEGIN by inventorying the inputs, showing the normalized existing-image baseline,
+and implementing the smallest useful comparison. Then execute the method arms.

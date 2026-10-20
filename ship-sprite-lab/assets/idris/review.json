@@ -1,0 +1,124 @@
+{
+  "reviewer": "Codex agent; provisional, no ratings supplied by either developer",
+  "scale": {
+    "1": "weak/unsuitable",
+    "2": "major defects",
+    "3": "serviceable starting point",
+    "4": "strong",
+    "5": "close to target for criterion"
+  },
+  "criteria_order": [
+    "approved-source fidelity",
+    "large/medium form readability",
+    "depth/lighting",
+    "material separation",
+    "native cohort fit",
+    "fine detail restraint"
+  ],
+  "scores": {
+    "A01": [
+      5,
+      3,
+      3,
+      1,
+      2,
+      4
+    ],
+    "A02": [
+      3,
+      3,
+      1,
+      3,
+      2,
+      4
+    ],
+    "A03": [
+      2,
+      5,
+      4,
+      4,
+      5,
+      4
+    ],
+    "A04": [
+      5,
+      3,
+      3,
+      4,
+      3,
+      4
+    ],
+    "A05": [
+      2,
+      2,
+      2,
+      3,
+      1,
+      3
+    ],
+    "A06": [
+      3,
+      4,
+      4,
+      5,
+      4,
+      4
+    ],
+    "A07": [
+      5,
+      3,
+      3,
+      4,
+      3,
+      4
+    ],
+    "A08": [
+      2,
+      4,
+      4,
+      5,
+      3,
+      3
+    ],
+    "A09": [
+      2,
+      4,
+      4,
+      5,
+      3,
+      3
+    ]
+  },
+  "winner_for_this_input_category": "A04 / M0 masked finish of existing perpendicular render",
+  "best_style_study_from_new_runs": "A06 / M4, fails structural acceptance",
+  "human_review": "NOT PROVIDED",
+  "structural_gate_is_separate": true,
+  "production_ready": false,
+  "game_test": "NOT RUN",
+  "fleet_generalization": "UNTESTED",
+  "reviewed_artifacts": [
+    "A01.png through A09.png",
+    "contact-200.png",
+    "contact-50percent.png",
+    "contact-25percent.png",
+    "diagnostic-contact.png",
+    "resolution-contact.png",
+    "filter-contact.png",
+    "diagnostics/*-backgrounds.png",
+    "diagnostics/*-pixel-crop.png",
+    "diagnostics/*-edge-overlay.png"
+  ],
+  "notes": "See docs/RESULTS.md for plain-language defects, uncertainty and production limits. A03 fidelity refers only to the chosen gray-source interpretation, not its artistic quality.",
+  "reviewed_output_hashes": {
+    "A01": "3e3fa24db78e4c7bca6bb2333b367b18c768de4cf5ce33df88113a360bb61d61",
+    "A02": "ea520e3dd4d58ba10933218c21e2bd9e186dfd3a23ce7f53541fd1ab13301d9d",
+    "A03": "e1262dcdd58c6d24636cb1e328382cb5bb891ba7cf97cb9d3ee33475f9485a78",
+    "A04": "e3ac0bcd5365bc7d69cb90fb5634b7e351e5b899315f21696825c3cf311dc3d1",
+    "A05": "cee69606b5f780f7b49e4217d51afde392497515bc47a4eadf59690866c73cbb",
+    "A06": "65c161e164c779284a00d302cbe8d3e2e2cf5041be09de10352e23825460f059",
+    "A07": "07f313259d70f67af07c65413fa8736ddef165c3b3d80e04daf18882c8240db2",
+    "A08": "6d76d47afa867dd2d24e5e0350077dea28483ce1f58f8ca5028f5fa4989d33f1",
+    "A09": "f9ab0c972fd2734b5eb8c9361cd8d650e7d1ed6e9cb3d5156b5fd28976947272"
+  },
+  "review_stale": false
+}
